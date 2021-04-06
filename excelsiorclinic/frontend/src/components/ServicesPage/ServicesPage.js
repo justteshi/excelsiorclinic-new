@@ -3,7 +3,7 @@ import React from 'react'
 const ServicesPage = () => {
     return (
         <div>
-            <h1>Services page</h1>
+            <h1 style={{textAlign: 'center'}}>Services page</h1>
         </div>
     )
 }

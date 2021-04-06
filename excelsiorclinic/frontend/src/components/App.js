@@ -1,9 +1,11 @@
-import React from "react"
+import React, { Suspense } from "react"
 import { render } from "react-dom"
 import { BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom"
 
 
-import Header from "./layout/Header"
+import Navbar from "./layout/Navbar"
+import Footer from "./layout/Footer"
+
 
 import HomePage from './HomePage/HomePage'
 import AboutPage from './AboutPage/AboutPage'
@@ -16,20 +18,22 @@ import RegistrationPage from './RegistrationPage/RegistrationPage'
 
 export const App = (props) => {
     return (
-        <div className="center">
+        <div className="">
              <Router>
-                 <Header />
-                <Switch>
-                    <Route exact path="/" component={HomePage}/>
-                    <Route exact path="/about" component={AboutPage} />
-                    <Route exact path="/services" component={ServicesPage} />
-                    <Route exact path="/gallery" component={GalleryPage} />
-                    <Route exact path="/news" component={NewsPage} />
-                    <Route exact path="/contacts" component={ContactsPage} />
-                    {/* Not for user registration */}
-                    <Route exact path="/registration" component={RegistrationPage} />
-
-                </Switch>
+                <Navbar />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Switch>
+                        <Route exact path="/" component={HomePage}/>
+                        <Route  path="/about" component={AboutPage} />
+                        <Route  path="/services" component={ServicesPage} />
+                        <Route  path="/gallery" component={GalleryPage} />
+                        <Route  path="/news" component={NewsPage} />
+                        <Route  path="/contacts" component={ContactsPage} />
+                        {/* Not for user registration */}
+                        <Route  path="/registration" component={RegistrationPage} />
+                    </Switch>
+                </Suspense>
+                <Footer />
             </Router>
         </div>
     )
