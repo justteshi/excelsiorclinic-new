@@ -18,7 +18,7 @@ import RegistrationPage from './RegistrationPage/RegistrationPage'
 
 export const App = (props) => {
     return (
-        <div className="">
+        <div className="app-wrapper">
              <Router>
                 <Navbar />
                 <Suspense fallback={<div>Loading...</div>}>

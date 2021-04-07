@@ -3,7 +3,7 @@ import companyLogo from '../../../static/images/excelsior_logo.png'
 
 const Footer = () => {
     return (
-        <div>
+        <div className="footer-wrapper">
             <div className="footer container">
                 <div className="clinic-info">
                     <img src={companyLogo} />
@@ -33,16 +33,35 @@ const Footer = () => {
                 </div>
                 <div className="opening-hours">
                     <h4>Opening Hours</h4>
-                    <p>Monday 8.00-17.00</p>
-                    <p>Tuesday 8.00-17.00</p>
-                    <p>Wednesday 8.00-17.00</p>
-                    <p>Thursday 8.00-17.00</p>
-                    <p>Friday 9.30-17.00</p>
-                    <p>Saturday 9.30-15.00</p>
+                    <div className="monday">
+                        <p className="day">Monday</p>
+                        <p className="hours">8.00-17.00</p>
+                    </div>
+                    <div className="tuesday">
+                        <p className="day">Tuesday</p>
+                        <p className="hours">8.00-17.00</p>
+                    </div>
+                    <div className="wednesday">
+                        <p className="day">Wednesday</p>
+                        <p className="hours">8.00-17.00</p>
+                    </div>
+                    <div className="thursday">
+                        <p className="day">Thursday</p>
+                        <p className="hours">8.00-17.00</p>
+                    </div>
+                    <div className="friday">
+                        <p className="day">Friday</p>
+                        <p className="hours">9.30-17.00</p>
+                    </div>
+                    <div className="saturday">
+                        <p className="day">Saturday</p>
+                        <p className="hours">9.30-15.00</p>
+                    </div>
+
                 </div>
             </div>
             <hr />
-            <p style={{textAlign: 'center'}}>Copyright &#169; 2021 Excelsior All right reserved.</p>
+            <p className="copyright" style={{textAlign: 'center'}}>Copyright &#169; 2021 Excelsior All right reserved.</p>
         </div>
         
     )

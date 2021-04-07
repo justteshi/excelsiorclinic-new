@@ -4,13 +4,15 @@ import { Carousel } from 'react-responsive-carousel';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
+import ChooseUsSection from './ChooseUsSection'
+import FourIconsSection from './FourIconsSection'
 
 
 const HomePage = (props) => {
 
     return (
         <div className="">
-            <h1 style={{textAlign: 'center'}}>Home Page</h1>
+            {/* <h1 style={{textAlign: 'center'}}>Home Page</h1> */}
             <Carousel showStatus={false} showThumbs={false} infiniteLoop={true} dynamicHeight={true}>
                 <div>
                     <img src="../../../static/images/carosel_image1.jpg" /> 
@@ -40,8 +42,8 @@ const HomePage = (props) => {
                     
                 </div>
             </Carousel>
-            
-            
+            <ChooseUsSection />
+            <FourIconsSection />
         </div>
     )
 }

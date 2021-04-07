@@ -1,9 +1,8 @@
-html{
-    font-family: Arial, Helvetica, sans-serif;
+body{
+    font-family: 'Lato', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     box-sizing: border-box;
-    
 }
 *{
     padding: 0;
@@ -11,17 +10,24 @@ html{
     color: #666666 ;
 }
 
+.app-wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
 
 
  /* Navigation */
+
 .nav-bar {
     width: 100%;
+    height: 120px;
     display: flex;
     margin-top: 1em;
-    margin-bottom: 1em;
 }
 .nav-bar img {
     height: 100px;
+    animation: 1.3s ease-out 0s 1 slideInFromLeft;
     /* width: 100px; */
 }
 .nav-bar ul {
@@ -40,43 +46,91 @@ html{
     text-decoration: none;
     color: #666666 ;
 }
+.nav-bar li a:hover {
+    color: white;
+    background:#00a6ce;
+    border-radius: 5px;
+}
+
+
 
 /* Footer */
+
+.footer-wrapper {
+    background: rgb(230, 229, 229);
+}
 .footer {
+    width: 100%;
+    height: 540px;
     display: flex;
-    margin-top: 3em;
+    
+    margin-top: 10em;
+
 }
 .footer h4 {
     font-weight: bold;
     color: #00a6ce;
-    padding: 3em 0 1em 0 ;
+    padding: 3em 0 1em 0;
 }
 .clinic-info {
-    width: 25%;
+    width: 40%;
     display: block;
-    margin: 0 auto;
+    margin: 0 2em 0 0;
 }
 .dental-clinic {
-    width: 25%;
+    width: 20%;
     display: block;
-    text-align: center;
-
+    margin: 0 2em;
 }
 .our-services {
-    width: 25%;
+    width: 20%;
     display: block;
-    text-align: center;
-    
+    margin: 0 2em;
 }
 .opening-hours {
-    width: 25%;
+    width: 20%;
     display: block;
-    text-align: center;
+    margin: 0 0 0 2em;
 }
+.monday{
+    display: flex;
+    justify-content: space-between;
+}
+.tuesday {
+    display: flex;
+    justify-content: space-between; 
+}
+.wednesday{
+    display: flex;
+    justify-content: space-between; 
+}
+.thursday{
+    display: flex;
+    justify-content: space-between; 
+}
+.friday{
+    display: flex;
+    justify-content: space-between; 
+}
+.saturday{
+    display: flex;
+    justify-content: space-between; 
+}
+.copyright{
+    margin-bottom: 0;
+    padding-bottom: 1em;
+}
+hr{
+    background: white;
+}
+
 
 
 /* HomePage */
+
+
 /* Carosel */
+
 .heading-one {
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
@@ -117,14 +171,12 @@ html{
     -o-transition: opacity .35s ease-in-out;
     transition: opacity .35s ease-in-out;
 }
-
-.center-btn {
-    
-
+.carousel .slide img {
+    max-height: 800px;
 }
 
 .view-btn {
-    
+
     /* position: absolute;
     top: 50%; */
     border-radius: 25px;
@@ -142,4 +194,124 @@ html{
 .view-btn:hover {
     color: white;   
     border: 1px solid white;
+}
+
+
+
+/* Choose Us Section */
+
+.choose-us-right {
+    width: 40%;
+    display: block;
+}
+
+.choose-us-left  {
+    width: 50%;
+    background: url("../../../static/images/why_choose_us.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: -20px 20px rgb(230, 229, 229);
+
+}
+.choose-us-headng {
+    display: flex;
+    margin-top: 1em;
+}
+.choose-us-headng h1:nth-child(1) {
+    font-size: 2em;
+    font-weight: bold;
+    color: #002169 ;
+    margin-right: 0.5rem;
+}
+.choose-us-headng h1:nth-child(2) {
+    font-size: 2em;
+    font-weight: bold;
+    color: #00a6ce;
+    margin-right: 0.5rem;
+}
+.choose-us-headng h1:nth-child(3) {
+    font-size: 2em;
+    font-weight: bold;
+    color: #00a6ce;
+    
+}
+.progress-bars{
+    margin-top: 3em;
+}
+.progress-info {
+    display: flex;
+}
+.percentage{
+    color: black;
+}
+.progress-bars p {
+    margin-bottom: 0.5em;
+    color: black;
+}
+.progress{
+    height: 10px;
+    margin-bottom: 3em;
+}
+.progress-bar {
+    background-color: #00a6ce;
+    text-align: right;
+}
+.progress-bar #text {
+    color: red;
+}
+
+
+
+/* Four Icons Section */
+
+.four-icons-section {
+    width: 100%;
+    height: 600px;
+    background-color: #00a6ce;
+    display: flex;
+    justify-content: space-around;
+}
+.icon-wrapper {
+    margin: auto;
+    
+    width: 20%;
+    text-align: center;
+}
+.icon {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background: url("../../../static/images/dental_icon.png");
+    background-size: cover;
+}
+.icon-info {
+    margin-top: 1em;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+.second-icon-info {
+    color: white;
+}
+.icon-btn {
+    color: white;
+    text-decoration: none;
+    
+}
+
+
+
+
+
+/* KeyFrames */
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0%;
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
