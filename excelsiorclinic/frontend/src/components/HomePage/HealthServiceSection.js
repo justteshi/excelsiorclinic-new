@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Nav,NavItem, Tab, Tabs } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTooth } from '@fortawesome/free-solid-svg-icons'
@@ -13,47 +14,9 @@ const HealthServiceSection = () => {
         justifyContent: "center",
 
     }
-    const TeethCleaningTitle = () => {
-        return (
-            <div >
-                <FontAwesomeIcon className="teeth-cleaning-title" icon={faTooth} size="2x"/>
-                <h6 className="teeth-cleaning-title">Teeth Cleaning</h6>
-            </div>
-        )
-    }
-    const TeethWhiteningTitle = () => {
-        return (
-            <div>
-                <FontAwesomeIcon className="teeth-cleaning-title"  icon={faTooth} size="2x"/>
-                <h6 className="teeth-cleaning-title">Teeth Whitening</h6>
-            </div>
-        )
-    }
-    const QualityBracketsTitle = () => {
-        return (
-            <div>
-                <FontAwesomeIcon className="teeth-cleaning-title"  icon={faTooth} size="2x"/>
-                <h6 className="teeth-cleaning-title">Quality Brackets</h6>
-            </div>
-        )
-    }
-    const ModernAnaestheticTitle = () => {
-        return (
-            <div>
-                <FontAwesomeIcon className="teeth-cleaning-title"  icon={faTooth} size="2x"/>
-                <h6 className="teeth-cleaning-title">Modern Anaesthetic</h6>
-            </div>
-        )
-    }
-    const DentalCalculusTitle = () => {
-        return (
-            <div>
-                <FontAwesomeIcon className="teeth-cleaning-title" icon={faTooth} size="2x"/>
-                <h6 className="teeth-cleaning-title">Dental Calculus</h6>
-            </div>
-        )
-    }
-    const ParadontosisTitle = () => {
+
+
+    const HealthServicesTabTitle = () => {
         return (
             <div>
                 <FontAwesomeIcon className="teeth-cleaning-title"  icon={faTooth} size="2x"/>
@@ -61,40 +24,24 @@ const HealthServiceSection = () => {
             </div>
         )
     }
-    const TeethCleaning = () => {
+    const HealthServicesTab = () => {
         return(
-            <div>
-                <div className="teeth-cleaning-wrapper">
-                    <div className="teeth-cleaning-img"></div>
-                    <div className="teeth-cleaning-right">
-                        <h1>THE HIGHLIGHTERS OF THE TECHNOLOGY WHITENING WHITE ZOOM</h1>
-                        <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <a href="#">View more  &#10140;</a>
+            <div className="services-tap-wrapper">
+                <div className="services-tap-img"></div>
+                <div className="services-tap-right">
+                    <h2>THE HIGHLIGHTERS OF THE TECHNOLOGY WHITENING WHITE ZOOM</h2>
+                    <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div className="tab-btn-wrapper">
+                        <Link className="tab-btn" to="/services">Read more  &#10140;</Link>
                     </div>
                 </div>
             </div>
         )
     }
-    const TeethWhitening = () => {
-        return(
-            <div>
-                <div className="teeth-whitening-wrapper">
-                    <div className="teeth-whitening-img"></div>
-                    <div className="teeth-whitening-right">
-                        <h1>WHITE HIGHLIGHTERS OF THE TECHNOLOGY WHITENING WHITE ZOOM</h1>
-                        <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <a href="#">View more  &#10140;</a>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+
     return (
         <div style={style}>
             <div className="container" style={{background:"", height:"800px", margin: "auto"}}>
@@ -108,23 +55,23 @@ const HealthServiceSection = () => {
                 </div>
             
                 <Tabs justify defaultActiveKey="teeth-cleaning">
-                    <Tab eventKey="teeth-cleaning" title={<TeethCleaningTitle />}>
-                        <TeethCleaning />
+                    <Tab eventKey="teeth-cleaning" title={<HealthServicesTabTitle />}>
+                        <HealthServicesTab />
                     </Tab>
-                    <Tab eventKey="teeth-whitening" title={<TeethWhiteningTitle />}>
-                        <TeethWhitening />
+                    <Tab eventKey="teeth-whitening" title={<HealthServicesTabTitle />}>
+                        <HealthServicesTab />
                     </Tab>
-                    <Tab eventKey="brackets" title={<QualityBracketsTitle />}>
-                        <TeethWhitening />
+                    <Tab eventKey="brackets" title={<HealthServicesTabTitle />}>
+                        <HealthServicesTab />
                     </Tab>
-                    <Tab eventKey="anaesthetic" title={<ModernAnaestheticTitle />}>
-                        <TeethWhitening />
+                    <Tab eventKey="anaesthetic" title={<HealthServicesTabTitle />}>
+                        <HealthServicesTab />
                     </Tab>
-                    <Tab eventKey="calculus" title={<DentalCalculusTitle />}>
-                        <TeethWhitening />
+                    <Tab eventKey="calculus" title={<HealthServicesTabTitle />}>
+                        <HealthServicesTab />
                     </Tab>
-                    <Tab eventKey="paradontosis" title={<ParadontosisTitle />}>
-                        <TeethWhitening />
+                    <Tab eventKey="paradontosis" title={<HealthServicesTabTitle />}>
+                        <HealthServicesTab />
                     </Tab>
                 </Tabs>
             </div>
