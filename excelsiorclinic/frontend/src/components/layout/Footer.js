@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="clinic-info">
                     <img src={companyLogo} />
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus nemo qui numquam quia voluptates dignissimos vel eos, amet doloremque?</p>
-                    <p><i className="fa fa-house-user"></i>1463 Sofia, Dospat str. 42 / 14463 София, ул. Доспат 42</p>
+                    <p>&#169;1463 Sofia, Dospat str. 42 / 14463 София, ул. Доспат 42</p>
                     <p>&#169;+359 887 537 424</p>
                     <p>&#169;nikova@axcelsiorclinic.com</p>
 

@@ -9,12 +9,13 @@ body{
     margin: 0;
     color: #666666 ;
 }
-
+:hover{
+    color: inherit;
+}
 .app-wrapper {
     max-width: 1920px;
     margin: 0 auto;
 }
-
 
 
  /* Navigation */
@@ -63,8 +64,7 @@ body{
     width: 100%;
     height: 540px;
     display: flex;
-    
-    margin-top: 10em;
+
 
 }
 .footer h4 {
@@ -300,10 +300,126 @@ hr{
     
 }
 
+/* Meet Our Doctors Section */
+
+.doctors-heading {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 3em;
+}
+.meet-our-doctors {
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+.doctors-paragraph {
+    text-align: center;
+}
+
+.doctors-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.doctor-wrapper {
+    width: 30%;
+    text-align: center;
+    padding: 3em 1em ;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+
+}
+.doctor-img {
+    margin: 0 auto;
+    margin-bottom: 1em;
+    background: url("../../../static/images/dentist.jpg");
+    /* background: lightgrey; */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: top;
+
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+.doctor-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #00a6ce;
+    position: relative;
+    top: 5px;
+    left: 180px;
+    display:table-cell;
+    vertical-align:middle;
+    color: white;
+}
+.doctor-icon .svg-inline--fa path{
+    color: white;
+}
+.doctor-info {
+    padding: 0 1em;
+    margin-bottom: 2em;
+}
+.doctor-name {
+    color: black;
+    font-weight: bold;
+}
+.doctor-spec {
+    color: #00a6ce;
+    font-weight: bold;
+}
+.doctor-social {
+    opacity: 0.3;
+    margin: 0 auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+}
 
 
 
-
+/* Our Health Service */
+.health-service-heading{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 3em;
+}
+.health-service {
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    
+}
+.health-service h1 {
+    color:  white !important;
+}
+.health-service-paragraph {
+    text-align: center;
+    color: white;
+}
+.nav-tabs {
+    border-bottom: 1px solid lightblue;
+}
+.nav-tabs .nav-link {
+    border: none;
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover, .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom: 3px solid lightblue;
+    outline: 0;
+    background: none;
+    color: white !important;
+}
+.teeth-cleaning-title {
+    color: white;
+    margin-top: 0.5em;
+    text-decoration: none;
+    font-weight: bold;
+}
+.teeth-cleaning-title path {
+    color: white;
+}
 /* KeyFrames */
 
 @keyframes slideInFromLeft {
