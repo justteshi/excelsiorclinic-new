@@ -9,9 +9,7 @@ body{
     margin: 0;
     color: #666666 ;
 }
-:hover{
-    color: inherit;
-}
+
 .app-wrapper {
     max-width: 1920px;
     margin: 0 auto;
@@ -256,6 +254,10 @@ hr{
 .progress-bar {
     background-color: #00a6ce;
     text-align: right;
+    
+}
+.progress-bars .progress-bar:nth-child(1){
+    animation: 1.3s cubic-bezier(0.01, 0.35, 0.99, 0.99) 0s 1 slideInFromLeft;
 }
 .progress-bar #text {
     color: red;
@@ -398,18 +400,20 @@ hr{
     text-align: center;
     color: white;
 }
-.nav-tabs {
-    border-bottom: 1px solid lightblue;
-}
+
 .nav-tabs .nav-link {
-    border: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+
+    border-bottom: 1px solid white;
 }
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover, .nav-tabs .nav-link.active{
     border: none;
-    border-bottom: 3px solid lightblue;
+    border-bottom: 3px solid white ;
     outline: 0;
     background: none;
-    color: white !important;
+
 }
 .teeth-cleaning-title {
     color: white;
@@ -420,6 +424,9 @@ hr{
 .teeth-cleaning-title path {
     color: white;
 }
+
+
+
 /* KeyFrames */
 
 @keyframes slideInFromLeft {
@@ -431,3 +438,11 @@ hr{
         transform: translateX(0);
     }
 }
+@keyframes startFromLeftProgressBarOne {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}   
