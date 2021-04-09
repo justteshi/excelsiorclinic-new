@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Nav,NavItem, Tab, Tabs } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTooth } from '@fortawesome/free-solid-svg-icons'
+import { faTooth, faCheckDouble } from '@fortawesome/free-solid-svg-icons'
 
 
 const HealthServiceSection = () => {
@@ -10,9 +10,7 @@ const HealthServiceSection = () => {
         height: "1000px",
         width: "100%",
         background: "#00a6ce",
-        display: "flex",
-        justifyContent: "center",
-
+        paddingTop: "5em"
     }
 
 
@@ -30,10 +28,10 @@ const HealthServiceSection = () => {
                 <div className="services-tap-img"></div>
                 <div className="services-tap-right">
                     <h2>THE HIGHLIGHTERS OF THE TECHNOLOGY WHITENING WHITE ZOOM</h2>
-                    <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p>orem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><FontAwesomeIcon className="service-tap-par-icoon"  icon={faCheckDouble} /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><FontAwesomeIcon className="service-tap-par-icoon"  icon={faCheckDouble} /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><FontAwesomeIcon className="service-tap-par-icoon"  icon={faCheckDouble} /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><FontAwesomeIcon className="service-tap-par-icoon"  icon={faCheckDouble} /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <div className="tab-btn-wrapper">
                         <Link className="tab-btn" to="/services">Read more  &#10140;</Link>
                     </div>

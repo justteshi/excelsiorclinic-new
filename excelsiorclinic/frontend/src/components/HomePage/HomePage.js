@@ -7,6 +7,8 @@ import DoctorsSection from './DoctorsSection';
 import CaroselSection from './CaroselSection';
 import HealthServiceSection from './HealthServiceSection'
 import VideoSection from './VideoSection';
+import WriteUsSection from './WriteUsSection';
+
 
 const HomePage = (props) => {
 
@@ -19,6 +21,7 @@ const HomePage = (props) => {
             <DoctorsSection />
             <HealthServiceSection />
             <VideoSection />
+            <WriteUsSection />
         </div>
     )
 }

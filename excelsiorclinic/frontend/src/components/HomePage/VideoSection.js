@@ -1,13 +1,31 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
 const VideoSection = () => {
     const style = {
         height: "1000px",
-        background: "cyan"
+        background: "",
+        marginTop: "6em",
+        marginBottom: "2em"
     }
     return (
         <div className="container" style={style}>
-            
+            <div className="video-wrapper">
+                <div className="play-btn">
+                    <FontAwesomeIcon icon={faPlay} size="3x"/>
+                </div>
+            </div>
+            <div className="choose-us-headng meet-our-doctors">
+                        <h1>Our</h1> 
+                        <h1>Clinic</h1>
+                </div>
+            <p className="video-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum rerum, suscipit pariatur quos atque voluptas explicabo beatae quia sunt esse inventore sint odit recusandae similique dolores est necessitatibus quo totam.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum rerum, suscipit pariatur quos atque voluptas explicabo beatae quia sunt esse inventore sint odit recusandae similique dolores est necessitatibus quo totam.
+            </p>
+            <Link className="video-btn" to="/">Read more  &#10140;</Link>
         </div>
     )
 }
