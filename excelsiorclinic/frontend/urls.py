@@ -9,5 +9,6 @@ urlpatterns = [
     path('news', index),
     path('contacts', index),
     path('registration', index),
- 
+    path('feedback', index),
+
 ]

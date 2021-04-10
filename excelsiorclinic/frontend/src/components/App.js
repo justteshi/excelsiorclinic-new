@@ -14,6 +14,8 @@ import GalleryPage from './GalleryPage/GalleryPage'
 import NewsPage from './NewsPage/NewsPage'
 import ContactsPage from './ContactsPage/ContactsPage'
 import RegistrationPage from './RegistrationPage/RegistrationPage'
+import FeedbackPage from './FeedbackPage/FeedbackPage'
+
 
 
 export const App = (props) => {
@@ -31,6 +33,8 @@ export const App = (props) => {
                         <Route  path="/contacts" component={ContactsPage} />
                         {/* Not for user registration */}
                         <Route  path="/registration" component={RegistrationPage} />
+                        <Route  path="/feedback" component={FeedbackPage} />
+
                     </Switch>
                 </Suspense>
                 <Footer />

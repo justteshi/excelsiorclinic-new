@@ -189,7 +189,8 @@ hr{
 }
 .view-btn:hover {
     color: white;   
-    border: 1px solid white;
+    box-shadow: 0 0 0 2px white;
+    font-weight: bold;
 }
 
 

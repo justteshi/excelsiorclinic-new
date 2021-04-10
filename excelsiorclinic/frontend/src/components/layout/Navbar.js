@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 import companyLogo from '../../../static/images/excelsior_logo.png'
 
@@ -21,6 +23,8 @@ const Navbar = () => {
                 <li><NavLink to="/news" activeStyle={navStylesActive}>News</NavLink></li>
                 <li><NavLink to="/contacts" activeStyle={navStylesActive}>Contacts</NavLink></li>
                 <li><NavLink to="/registration" activeStyle={navStylesActive}>Registration</NavLink></li>
+                <li><NavLink to="/feedback" activeStyle={navStylesActive}>Feedback</NavLink></li>
+                
             </ul>
             {/* <nav>
                 <NavLink to="/">Home</NavLink>
