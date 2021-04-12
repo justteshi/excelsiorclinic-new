@@ -71,12 +71,12 @@ const GalleryPage = () => {
 
     const style = {
         height: "1000px",
-        marginTop: "3em"
+        
     }
 
     return (
         <div className="galery container" style={style}>
-            <h1 style={{textAlign: 'center'}}>Gallery</h1>
+            <h1 style={{textAlign: 'center', margin: "1em 0 1em 0"}}>Gallery</h1>
             <Gallery images={IMAGES} enableImageSelection={true} margin={3} rowHeight={300}/>
         </div>
     )

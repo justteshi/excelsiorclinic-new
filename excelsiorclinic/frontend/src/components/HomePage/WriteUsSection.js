@@ -3,12 +3,12 @@ import { Form, Row, Col, Button, FormGroup} from 'react-bootstrap'
 
 
 const WriteUsSection = () => {
-    const [validated, setValidated] = useState(false);
+    const [validated, setValidated] = useState(false)
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
-        event.preventDefault();
+        event.preventDefault()
         event.stopPropagation()
         }
 
@@ -78,7 +78,7 @@ const WriteUsSection = () => {
                         <Form.Control className="message-input" rows="5" as="textarea" type="text" placeholder="Message" />
                         </Col>
                     </Row>
-                    <Button className="form-btn" type="submit">Submit  &#10140;</Button>
+                    <Button  className="form-btn" type="submit">Submit  &#10140;</Button>
                 </Form>
             </div>
         </div>

@@ -11,7 +11,7 @@ body{
 }
 
 .app-wrapper {
-    max-width: 1920px;
+
     margin: 0 auto;
 }
 
@@ -589,15 +589,55 @@ select::-ms-expand {
     position: relative;
     left: 50%;
     margin-left: -80px;
+
 }
 
 .form-btn:hover, .form-btn:focus, .form-btn:active:focus{
     color: white;
     font-weight: bold;
     background: rgb(101, 190, 219);
-    border: none;
+    border: 1px solid white;
     box-shadow: 0 0 0 2px white;
 }
+
+
+/* Feedback Page */
+.feedback-cover-img {
+    height: 500px;
+    background: url('../images/gallery/gallery5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.feedback-heading-one {
+    position: relative;
+    top: 45%;
+    left: 50%;
+    width: 200px;
+    text-align: center;
+    margin-left: -100px;
+}
+.feedback-heading-two {
+    position: relative;
+    top: 45%;
+    left: 50%;
+    width: 200px;
+    text-align: center;
+    margin-left: -100px;
+}
+.feedback-form .row {
+    padding-bottom: 1em;
+}
+.feedback-form {
+    background: #00a6ce;
+
+    border-radius: 5px;
+    padding: 1em;
+}
+.feedback-form textarea {
+    resize: none;
+}
+
 
 /* KeyFrames */
 

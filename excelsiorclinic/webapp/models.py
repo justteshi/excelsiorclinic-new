@@ -11,5 +11,7 @@ class FeedbackArticles(models.Model):
     title = models.CharField(max_length=50)
     message = models.CharField(max_length=256)
     user = models.CharField(max_length=20)
+    stars = models.IntegerField(default=1)
     creted_at = models.DateTimeField(auto_now_add=True)
+
     
