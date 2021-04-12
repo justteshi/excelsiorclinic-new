@@ -7,10 +7,12 @@ import { Form, Row, Col, Button, FormGroup} from 'react-bootstrap'
 const FeedbackPage = () => {
     const [articles, setArticles] = useState([])
     const [title, setTitle] = useState("")
-    const [raiting, setRaiting] = useState()
+    const [raiting, setRaiting] = useState("")
     const [message, setMessage] = useState("")
     const [user, setUser] = useState("test")
 
+    const csrftoken = Cookies.get('csrftoken');
+    console.log(csrftoken)
     
     useEffect(() => {
         const options = {
@@ -32,7 +34,12 @@ const FeedbackPage = () => {
             stars: raiting,
             user: user
         }
-        axios.post('/api/articles/', article)
+        const headers = {
+            'X-CSRFToken': csrftoken
+        }
+        axios.post('/api/articles/', article, {
+            headers: headers
+        })
         .then(response => {
             console.log(response)
             console.log(response.data)
@@ -48,7 +55,7 @@ const FeedbackPage = () => {
             <div className="feedback-cover-img">
                     <h1 className="feedback-heading-one">Feedback</h1>
                     <h5 className="feedback-heading-two">Home / Feedback</h5>
-                </div>
+            </div>
             <div className="container">
                 <div className="feedback-form-wrapper" style={{width: "70%", margin: "0 auto", padding: "2em 10px 0 10px"}}>
                     <h1 style={{textAlign: "center", margin:"1em 0 1em 0"}}>Give us Feedback</h1>
