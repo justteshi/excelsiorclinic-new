@@ -12,7 +12,6 @@ const FeedbackPage = () => {
     const [user, setUser] = useState("test")
 
     const csrftoken = Cookies.get('csrftoken');
-    console.log(csrftoken)
     
     useEffect(() => {
         const options = {
