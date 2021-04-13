@@ -38,7 +38,7 @@ Informative web application for Excelsior Clinic.
  ```
  8. Open browser and go to ```bash  http://localhost:8000 ```
 ### Front-end
- 9. navigate to the mai folder
+ 9. navigate to the main folder
  ```bash
  cd ..
  ```
