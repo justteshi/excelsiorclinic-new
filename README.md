@@ -1,10 +1,19 @@
 # Excelsior Clinic Web App
-Informative web application for Excelsior Clinic.
+Informative web application for Excelsior Clinic where u can book your dental service online.
+
+## About
+[Django](https://www.djangoproject.com/) project with:
+* [React](https://reactjs.org/) for building interactive UIs
+* [React Bootstrap](https://react-bootstrap.github.io/) for responsive styling
+* [Webpack](https://webpack.js.org/) for bundling static assets
+* [Babel](https://babeljs.io/) JavaScript compiler.
+* [axios](https://www.npmjs.com/package/axios) Promise based HTTP client 
 
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/45295214/114600153-b460b500-9c9c-11eb-9188-1a8f29703e1f.png)
 
 ## Installation
+ * Python 3.7
 ### Back-end
  1. Clone the repo
  ```bash
@@ -13,11 +22,16 @@ Informative web application for Excelsior Clinic.
  2. Create virtualenv
  ```bash
  cd my-project
- virtualenv --python C:\Path\To\Python\python.exe venv
+ virtualenv env
  ```
  3. Activate virtualenv
+ Mac OS / Linux
  ```bash
- .\venv\Scripts\activate
+ source env/bin/activate
+ ```
+ Windows
+  ```bash
+ env\Scripts\activate
  ```
  4. Add dependencies
  ```bash
