@@ -50,9 +50,9 @@ Informative web application for Excelsior Clinic where u can book your dental se
  ```bash
  python manage.py runserver
  ```
- 8. Open browser and go to ```http://localhost:8000 ```
+ 8. Open browser and go to ```bash  http://localhost:8000 ```
 ### Front-end
- 9. navigate to the main folder
+ 9. navigate to the mai folder
  ```bash
  cd ..
  ```
