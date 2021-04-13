@@ -31,7 +31,7 @@ Informative web application for Excelsior Clinic where u can book your dental se
  source env/bin/activate
  ```
 * Windows
-  ```bash
+ ```bash
  env\Scripts\activate
  ```
  4. Add dependencies
