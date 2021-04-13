@@ -13,7 +13,7 @@ const DoctorsSection = () => {
     const style = {
         height: "1000px",
         background: "",
-        paddingTop: "5em"
+        paddingTop: "4em"
     }
     return (
         <div className="container our-doctors" style={style}>

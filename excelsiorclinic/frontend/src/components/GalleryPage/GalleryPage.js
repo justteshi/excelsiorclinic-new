@@ -71,7 +71,7 @@ const GalleryPage = () => {
 
     const style = {
         height: "1000px",
-        
+        marginBottom: "4em"
     }
 
     return (

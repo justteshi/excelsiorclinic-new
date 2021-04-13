@@ -73,9 +73,10 @@ const FeedbackPage = () => {
                     <h1 className="feedback-heading-one">Feedback</h1>
                     <h5 className="feedback-heading-two">Home / Feedback</h5>
             </div>
-            <div className="container">
-                <div className="feedback-form-wrapper" style={{width: "70%", margin: "0 auto", padding: "2em 10px 0 10px"}}>
-                    <h1 style={{textAlign: "center", margin:"1em 0 1em 0"}}>Give us Feedback</h1>
+            <div className="">
+                <div className="feedback-form-wrapper" style={{width: "100%", margin: "0 auto", background:"#00a6ce"}}>
+                    <h1 style={{textAlign: "center", padding:"1em 0 1em 0", color: "white"}}>Give us Feedback</h1>
+                   
                     <Form className="feedback-form" noValidate validated={validated} onSubmit={handleSubmit}>
                         <Row>
                             <Col>
@@ -85,7 +86,7 @@ const FeedbackPage = () => {
                             </Col>
                             <Col>
                                 <Form.Group controlId="">
-                                    <Form.Control min={1} max={5} required type="number" placeholder="Raiting" value={raiting} onChange={(e) => {setRaiting(e.target.value)}} />
+                                    <Form.Control min={1} max={5} required type="number" placeholder="Raiting 1-5" value={raiting} onChange={(e) => {setRaiting(e.target.value)}} />
                                 </Form.Group>
                             </Col>
                         </Row>
@@ -102,7 +103,7 @@ const FeedbackPage = () => {
                 {articles.map(article => (
                     
                     <div className="container" style={{display: "flex", justifyContent: "center"}}>
-                        <Card key={article.id} className="text-center" style={{width: "70%", border: "1px solid black", margin: "5px"}}>
+                        <Card key={article.id} className="text-center" style={{width: "60%", border: "1px solid black", margin: "5px"}}>
                             <Card.Header style={{ background: "#00a6ce", color: "white", fontWeight: "bold"}}>{article.title}</Card.Header>
                             <Card.Body>
                                 <Card.Text style={{fontStyle: "italic"}}>
