@@ -36,7 +36,7 @@ Informative web application for Excelsior Clinic.
  ```bash
  python manage.py runserver
  ```
- 8. Open browser and go to ```bash  http://localhost:8000 ```
+ 8. Open browser and go to ```http://localhost:8000 ```
 ### Front-end
  9. navigate to the main folder
  ```bash
