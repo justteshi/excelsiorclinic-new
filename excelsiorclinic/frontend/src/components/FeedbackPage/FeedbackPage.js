@@ -32,7 +32,6 @@ const FeedbackPage = () => {
 
         event.preventDefault();
         setValidated(true);
-        console.log([title,raiting, message, user])
         const article = {
             title: title,
             message: message,
@@ -46,8 +45,6 @@ const FeedbackPage = () => {
             headers: headers
         })
         .then(response => {
-            console.log(response)
-            console.log(response.data)
             axios.get('/api/articles/')
             .then( response => {
                 setArticles(response.data.reverse())
@@ -61,7 +58,11 @@ const FeedbackPage = () => {
             console.log(err)
         })
     }
-
+    const getDateFormat = (date) => {
+        console.log(date)
+        const newDate = new Date(date)
+        return newDate.toDateString()
+    }
     return (
         <>
             <div className="feedback-cover-img">
@@ -109,7 +110,7 @@ const FeedbackPage = () => {
                             <Card.Footer className="text-muted">
                                 <div style={{display: "flex", justifyContent: "space-between"}}>
                                 <div>user : {article.user}</div>
-                                <div>date : {article.creted_at}</div>
+                                <div>{getDateFormat(article.creted_at)}</div>
                                 </div>
                             </Card.Footer>
                         </Card>
