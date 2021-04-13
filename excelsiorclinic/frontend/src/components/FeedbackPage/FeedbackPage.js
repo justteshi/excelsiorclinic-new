@@ -10,6 +10,7 @@ const FeedbackPage = () => {
     const [raiting, setRaiting] = useState("")
     const [message, setMessage] = useState("")
     const [user, setUser] = useState("test")
+    const [validated, setValidated] = useState(false)
 
     const csrftoken = Cookies.get('csrftoken');
     
@@ -24,8 +25,17 @@ const FeedbackPage = () => {
         .catch( err => console.log(err))
     }, [])
 
+    
+
     const handleSubmit = (event) => {
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
         event.preventDefault();
+        event.stopPropagation();
+        }
+
+        event.preventDefault();
+        setValidated(true);
         console.log([title,raiting, message, user])
         const article = {
             title: title,
@@ -42,6 +52,14 @@ const FeedbackPage = () => {
         .then(response => {
             console.log(response)
             console.log(response.data)
+            axios.get('/api/articles/')
+            .then( response => {
+                setArticles(response.data.reverse())
+                setTitle("")
+                setRaiting("")
+                setMessage("")
+            })
+            .catch( err => console.log(err))
         })
         .catch( err => {
             console.log(err)
@@ -58,21 +76,21 @@ const FeedbackPage = () => {
             <div className="container">
                 <div className="feedback-form-wrapper" style={{width: "70%", margin: "0 auto", padding: "2em 10px 0 10px"}}>
                     <h1 style={{textAlign: "center", margin:"1em 0 1em 0"}}>Give us Feedback</h1>
-                    <Form className="feedback-form" onSubmit={handleSubmit}>
+                    <Form className="feedback-form" noValidate validated={validated} onSubmit={handleSubmit}>
                         <Row>
                             <Col>
-                                <Form.Group controlId="validationCustom01">
+                                <Form.Group controlId="">
                                     <Form.Control required type="text" placeholder="Title" value={title} onChange={(e) => {setTitle(e.target.value)}} />
                                 </Form.Group>
                             </Col>
                             <Col>
-                                <Form.Group controlId="validationCustom01">
+                                <Form.Group controlId="">
                                     <Form.Control min={1} max={5} required type="number" placeholder="Raiting" value={raiting} onChange={(e) => {setRaiting(e.target.value)}} />
                                 </Form.Group>
                             </Col>
                         </Row>
                         <Row>
-                            <Form.Group controlId="validationCustom01">
+                            <Form.Group controlId="">
                                 <Form.Control required rows="2" as="textarea" type="text" placeholder="Message" value={message} onChange={(e) => {setMessage(e.target.value)}} />
                             </Form.Group>
                         </Row>
