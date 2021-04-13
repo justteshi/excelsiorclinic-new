@@ -12,7 +12,7 @@ const DoctorsSection = () => {
     const firstThree = doctors.slice(0,3)
 
     useEffect(() => {
-        axios.get('api/doctors/')
+        axios.get('/api/doctors/')
         .then(response => {
             setDoctors(response.data)
         })

@@ -36,3 +36,13 @@ class Doctor(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class NewsArticle(models.Model):
+    title = models.CharField(max_length=100)
+    text = models.CharField(max_length=500)
+    cover_image = models.ImageField(upload_to='news_article_cover', blank=False)
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

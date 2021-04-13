@@ -11,7 +11,7 @@ const ServicesPage = () => {
     const secondFour = services.slice(4,8)
 
     useEffect(() => {
-        axios.get('api/services/')
+        axios.get('/api/services/')
         .then( response => {
             setServices(response.data)
         })
@@ -29,8 +29,8 @@ const ServicesPage = () => {
     return (
         <div>
             <div className="services-cover-img">
-                    <h1 className="feedback-heading-one" style={{width:"250px", marginLeft: "-125px", fontWeight:"bold"}}>Our Services</h1>
-                    <h5 className="feedback-heading-two"style={{color: "",fontWeight:"bold"}}>Home / Our Services</h5>
+                    <h1 className="feedback-heading-one" >Our Services</h1>
+                    <h5 className="feedback-heading-two">Home / Our Services</h5>
             </div>
             <div className="container" style={style}>
                 

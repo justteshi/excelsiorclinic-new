@@ -70,15 +70,22 @@ const GalleryPage = () => {
     ]
 
     const style = {
-        height: "1000px",
-        marginBottom: "4em"
+        height: "1200px",
+        marginBottom: "4em",
+        marginTop: "2em"
     }
 
     return (
-        <div className="galery container" style={style}>
-            <h1 style={{textAlign: 'center', margin: "1em 0 1em 0"}}>Gallery</h1>
-            <Gallery images={IMAGES} enableImageSelection={true} margin={3} rowHeight={300}/>
-        </div>
+        <>
+            <div className="gallery-cover-img">
+                <h1 className="feedback-heading-one" style={{color:"white"}}>Gallery</h1>
+                <h5 className="feedback-heading-two" style={{color:"white"}}>Home / Gallery</h5>
+            </div>
+            <div className="galery container" style={style}>
+                <hr style={{background:"black"}}></hr>
+                <Gallery images={IMAGES} enableImageSelection={true} margin={3} rowHeight={300}/>
+            </div>
+        </>
     )
 }
 

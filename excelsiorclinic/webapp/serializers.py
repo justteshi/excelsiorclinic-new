@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, FeedbackArticle, Service, Doctor
+from .models import User, FeedbackArticle, Service, Doctor, NewsArticle
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,7 +18,14 @@ class ServiceSerializer(serializers.ModelSerializer):
         model = Service
         fields = '__all__'
 
+
 class DoctorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Doctor
+        fields = '__all__'
+
+
+class NewsArticleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NewsArticle
         fields = '__all__'
