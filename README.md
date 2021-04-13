@@ -3,6 +3,7 @@ Informative web application for Excelsior Clinic where u can book your dental se
 
 ## About
 [Django](https://www.djangoproject.com/) project with:
+* [Django REST](https://www.django-rest-framework.org/) powerful and flexible toolkit for building Web APIs.
 * [React](https://reactjs.org/) for building interactive UIs
 * [React Bootstrap](https://react-bootstrap.github.io/) for responsive styling
 * [Webpack](https://webpack.js.org/) for bundling static assets
@@ -25,11 +26,11 @@ Informative web application for Excelsior Clinic where u can book your dental se
  virtualenv env
  ```
  3. Activate virtualenv
- Mac OS / Linux
+    Mac OS / Linux
  ```bash
  source env/bin/activate
  ```
- Windows
+    Windows
   ```bash
  env\Scripts\activate
  ```
