@@ -26,11 +26,11 @@ Informative web application for Excelsior Clinic where u can book your dental se
  virtualenv env
  ```
  3. Activate virtualenv
-    Mac OS / Linux
+* Mac OS / Linux
  ```bash
  source env/bin/activate
  ```
-    Windows
+* Windows
   ```bash
  env\Scripts\activate
  ```
