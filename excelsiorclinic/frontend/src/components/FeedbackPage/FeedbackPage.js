@@ -3,7 +3,6 @@ import axios from 'axios'
 import { Card } from 'react-bootstrap/'
 import { Form, Row, Col, Button, FormGroup} from 'react-bootstrap'
 
-
 const FeedbackPage = () => {
     const [articles, setArticles] = useState([])
     const [title, setTitle] = useState("")
@@ -11,7 +10,6 @@ const FeedbackPage = () => {
     const [message, setMessage] = useState("")
     const [user, setUser] = useState("test")
     const [validated, setValidated] = useState(false)
-
     const csrftoken = Cookies.get('csrftoken');
     
     useEffect(() => {
@@ -24,8 +22,6 @@ const FeedbackPage = () => {
         })
         .catch( err => console.log(err))
     }, [])
-
-    
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
@@ -64,7 +60,6 @@ const FeedbackPage = () => {
         .catch( err => {
             console.log(err)
         })
-
     }
 
     return (
@@ -76,7 +71,6 @@ const FeedbackPage = () => {
             <div className="">
                 <div className="feedback-form-wrapper" style={{width: "100%", margin: "0 auto", background:"#00a6ce"}}>
                     <h1 style={{textAlign: "center", padding:"1em 0 1em 0", color: "white"}}>Give us Feedback</h1>
-                   
                     <Form className="feedback-form" noValidate validated={validated} onSubmit={handleSubmit}>
                         <Row>
                             <Col>
@@ -98,10 +92,8 @@ const FeedbackPage = () => {
                         <Button className="form-btn" type="submit">Submit  &#10140;</Button>
                     </Form>
                 </div>
-
                 <h1 style={{textAlign: "center", margin:"1em 0 1em 0",}}>Customers Feedback</h1>
                 {articles.map(article => (
-                    
                     <div className="container" style={{display: "flex", justifyContent: "center"}}>
                         <Card key={article.id} className="text-center" style={{width: "60%", border: "1px solid black", margin: "5px"}}>
                             <Card.Header style={{ background: "#00a6ce", color: "white", fontWeight: "bold"}}>{article.title}</Card.Header>
@@ -122,7 +114,6 @@ const FeedbackPage = () => {
                             </Card.Footer>
                         </Card>
                     </div>
-                    
                 ))}
             </div>
         </>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
-
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTooth } from '@fortawesome/free-solid-svg-icons'
 
@@ -10,10 +9,6 @@ const ServicesPage = () => {
     const [services, setServices] = useState([])
     const firstFour = services.slice(0,4)
     const secondFour = services.slice(4,8)
-    console.log(firstFour)
-    console.log(secondFour)
-
-
 
     useEffect(() => {
         axios.get('api/services/')
@@ -23,7 +18,6 @@ const ServicesPage = () => {
         .catch( err => console.log(err))
     }, [])
 
-
     const style = {
         height: "1100px",
         background: "",
@@ -31,11 +25,9 @@ const ServicesPage = () => {
         marginTop: "",
         marginBottom: "2em",
         paddingTop: "3em"
-
     }
     return (
         <div>
-
             <div className="services-cover-img">
                     <h1 className="feedback-heading-one" style={{width:"250px", marginLeft: "-125px", fontWeight:"bold"}}>Our Services</h1>
                     <h5 className="feedback-heading-two"style={{color: "",fontWeight:"bold"}}>Home / Our Services</h5>
@@ -73,52 +65,6 @@ const ServicesPage = () => {
                         </div>
                     ) )}
                 </div>    
-                    
-                    
-                    {/* <div className="about-card">
-                        <div className="card-img"></div>
-                        <h5 className="card-heading">Internation Dentistry</h5>
-                        <p>Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti?</p>
-                        <Link className="video-btn" to="/">Learn more  &#10140;</Link>
-                    </div>
-                    <div className="about-card">
-                        <div className="card-img"></div>
-                        <h5 className="card-heading">Internation Dentistry</h5>
-                        <p>Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti?</p>
-                        <Link className="video-btn" to="/">Learn more  &#10140;</Link>
-                    </div>
-                    <div className="about-card">
-                        <div className="card-img"></div>
-                        <h5 className="card-heading">Internation Dentistry</h5>
-                        <p>Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti?</p>
-                        <Link className="video-btn" to="/">Learn more  &#10140;</Link>
-                    </div>
-                </div>
-                <div className="about-cards">
-                    <div className="about-card">
-                        <div className="card-img"></div>
-                        <h5 className="card-heading">Internation Dentistry</h5>
-                        <p>Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti?</p>
-                        <Link className="video-btn" to="/">Learn more  &#10140;</Link>
-                    </div>
-                    <div className="about-card">
-                        <div className="card-img"></div>
-                        <h5 className="card-heading">Internation Dentistry</h5>
-                        <p>Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti?</p>
-                        <Link className="video-btn" to="/">Learn more  &#10140;</Link>
-                    </div>
-                    <div className="about-card">
-                        <div className="card-img"></div>
-                        <h5 className="card-heading">Internation Dentistry</h5>
-                        <p>Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti?</p>
-                        <Link className="video-btn" to="/">Learn more  &#10140;</Link>
-                    </div>
-                    <div className="about-card">
-                        <div className="card-img"></div>
-                        <h5 className="card-heading">Internation Dentistry</h5>
-                        <p>Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti?</p>
-                        <Link className="video-btn" to="/">Learn more  &#10140;</Link>
-                    </div> */}
             </div>
         </div>
     )

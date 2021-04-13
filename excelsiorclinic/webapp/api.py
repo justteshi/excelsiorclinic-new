@@ -1,6 +1,6 @@
 from rest_framework import viewsets, permissions
-from .models import User, FeedbackArticles, Services
-from .serializers import UserSerializer, FeedbackArticlesSerializer, ServicesSerializer
+from .models import User, FeedbackArticle, Service, Doctor
+from .serializers import UserSerializer, FeedbackArticleSerializer, ServiceSerializer, DoctorSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -9,19 +9,26 @@ class UserViewSet(viewsets.ModelViewSet):
     ]
     serializer_class = UserSerializer
 
-class FeedbackArticlesViewSet(viewsets.ModelViewSet):
-    queryset = FeedbackArticles.objects.all()
+class FeedbackArticleViewSet(viewsets.ModelViewSet):
+    queryset = FeedbackArticle.objects.all()
     permissions_classes = [
         permissions.AllowAny
     ]
-    serializer_class = FeedbackArticlesSerializer
+    serializer_class = FeedbackArticleSerializer
 
-class ServicesViewSet(viewsets.ModelViewSet):
-    queryset = Services.objects.all()
+class ServiceViewSet(viewsets.ModelViewSet):
+    queryset = Service.objects.all()
     permissions_classes = [
         permissions.AllowAny
     ]
-    serializer_class = ServicesSerializer
+    serializer_class = ServiceSerializer
+
+class DoctorViewSet(viewsets.ModelViewSet):
+    queryset = Doctor.objects.all()
+    permissions_classes = [
+        permissions.AllowAny
+    ]
+    serializer_class = DoctorSerializer
     
 
     

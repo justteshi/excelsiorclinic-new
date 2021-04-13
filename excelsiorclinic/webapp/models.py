@@ -10,7 +10,7 @@ class User(models.Model):
         return self.name
 
 
-class FeedbackArticles(models.Model):
+class FeedbackArticle(models.Model):
     title = models.CharField(max_length=50)
     message = models.CharField(max_length=256)
     user = models.CharField(max_length=20)
@@ -21,10 +21,18 @@ class FeedbackArticles(models.Model):
         return self.title
 
 
-class Services(models.Model):
+class Service(models.Model):
     title = models.CharField(max_length=50)
     text = models.CharField(max_length=200)
 
     def __str__(self):
         return self.title
-    
+
+
+class Doctor(models.Model):
+    name = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
+    about = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.name

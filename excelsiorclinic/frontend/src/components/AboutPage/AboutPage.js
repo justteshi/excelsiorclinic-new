@@ -1,15 +1,12 @@
 import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import DoctorsSection from '../HomePage/DoctorsSection'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-
-
 
 const AboutPage = () => {
     const [services, setServices] = useState([])
     const firstFour = services.slice(0,4)
-    console.log(firstFour)
 
     useEffect(() => {
         axios.get('api/services/')
@@ -98,7 +95,6 @@ const AboutPage = () => {
                     ))}
                 </div>  
             </div>
-
             <DoctorsSection />
         </>
     )
