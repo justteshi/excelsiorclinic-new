@@ -612,9 +612,11 @@ select::-ms-expand {
     position: relative;
     top: 45%;
     left: 50%;
-    width: 200px;
+    width: 250px;
     text-align: center;
-    margin-left: -100px;
+    margin-left: -125px;
+    font-weight: bold;
+
 }
 .feedback-heading-two {
     position: relative;
@@ -623,6 +625,8 @@ select::-ms-expand {
     width: 200px;
     text-align: center;
     margin-left: -100px;
+    font-weight: bold;
+
 }
 .feedback-form .row {
     padding-bottom: 1em;
@@ -734,6 +738,29 @@ select::-ms-expand {
     color: white;
 }
 
+
+/* Services Page */
+
+.services-cover-img {
+    height: 375px;
+    background: url('../images/gallery/gallery3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.service-img {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    border: 2px solid #00a6ce;
+    border-radius: 50px;
+    margin-bottom: 1em;
+    background: lightgray;
+}
+.service-img svg {
+    position: relative;
+    top: 35%;
+}
 
 
 /* KeyFrames */

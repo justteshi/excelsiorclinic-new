@@ -18,12 +18,12 @@ const Navbar = () => {
             <ul>
                 <li><NavLink exact to="" activeStyle={navStylesActive}>Home</NavLink></li>
                 <li><NavLink to="/about" activeStyle={navStylesActive}>About us</NavLink></li>
-                <li><NavLink to="/services" activeStyle={navStylesActive}>Services</NavLink></li>
                 <li><NavLink to="/gallery" activeStyle={navStylesActive}>Gallery</NavLink></li>
-                <li><NavLink to="/news" activeStyle={navStylesActive}>News</NavLink></li>
                 <li><NavLink to="/contacts" activeStyle={navStylesActive}>Contacts</NavLink></li>
-                <li><NavLink to="/registration" activeStyle={navStylesActive}>Registration</NavLink></li>
                 <li><NavLink to="/feedback" activeStyle={navStylesActive}>Feedback</NavLink></li>
+                <li><NavLink to="/registration" activeStyle={navStylesActive}>Registration</NavLink></li>
+                <li><NavLink to="/news" activeStyle={navStylesActive}>News</NavLink></li>
+                <li><NavLink to="/services" activeStyle={navStylesActive}>Services</NavLink></li>
                 
             </ul>
             {/* <nav>

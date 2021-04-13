@@ -15,9 +15,9 @@ const FeedbackPage = () => {
     const csrftoken = Cookies.get('csrftoken');
     
     useEffect(() => {
-        const options = {
-            "Content-type": "applicaon/json"
-        }
+        // const options = {
+        //     "Content-type": "applicaon/json"
+        // }
         axios.get('/api/articles/')
         .then( response => {
             setArticles(response.data.reverse())

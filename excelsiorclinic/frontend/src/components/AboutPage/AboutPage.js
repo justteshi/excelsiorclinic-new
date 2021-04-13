@@ -1,13 +1,25 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import DoctorsSection from '../HomePage/DoctorsSection'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 
 const AboutPage = () => {
-    
+    const [services, setServices] = useState([])
+    const firstFour = services.slice(0,4)
+    console.log(firstFour)
 
+    useEffect(() => {
+        axios.get('api/services/')
+        .then(response=> {
+            setServices(response.data)
+        })
+        .catch(err=> {
+            console.log(err)
+        })
+    }, [])
 
     const style ={
         height: "600px",
@@ -76,30 +88,14 @@ const AboutPage = () => {
                     <p className="about-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti? Labore repudiandae minima esse officiis.</p>
                 </div>
                 <div className="about-cards">
-                    <div className="about-card">
-                        <div className="card-img"></div>
-                        <h5 className="card-heading">Internation Dentistry</h5>
-                        <p>Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti?</p>
-                        <Link className="video-btn" to="/">Learn more  &#10140;</Link>
-                    </div>
-                    <div className="about-card">
-                        <div className="card-img"></div>
-                        <h5 className="card-heading">Internation Dentistry</h5>
-                        <p>Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti?</p>
-                        <Link className="video-btn" to="/">Learn more  &#10140;</Link>
-                    </div>
-                    <div className="about-card">
-                        <div className="card-img"></div>
-                        <h5 className="card-heading">Internation Dentistry</h5>
-                        <p>Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti?</p>
-                        <Link className="video-btn" to="/">Learn more  &#10140;</Link>
-                    </div>
-                    <div className="about-card">
-                        <div className="card-img"></div>
-                        <h5 className="card-heading">Internation Dentistry</h5>
-                        <p>Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti?</p>
-                        <Link className="video-btn" to="/">Learn more  &#10140;</Link>
-                    </div>
+                    {firstFour.map(item => (
+                        <div className="about-card">
+                            <div className="card-img"></div>
+                            <h5 className="card-heading">{item.title}</h5>
+                            <p>{item.text}</p>
+                            <Link className="video-btn" to="/">Learn more  &#10140;</Link>
+                        </div>
+                    ))}
                 </div>  
             </div>
 
