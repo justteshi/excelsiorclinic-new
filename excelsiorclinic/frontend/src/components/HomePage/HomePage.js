@@ -12,15 +12,6 @@ import WriteUsSection from './WriteUsSection';
 
 const HomePage = (props) => {
     
-    axios.get('/api/users', {
-        "Content-type": "application.json"
-    })
-    .then( response => {
-        console.log(response.data[0])
-    })
-    .catch( err => {
-        console.log(err)
-    })
 
     return (
         <div className="">

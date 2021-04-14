@@ -1,65 +1,41 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { getFeedbacks, addFeedback } from '../../actions/feedbacks'
 import { Card } from 'react-bootstrap/'
-import { Form, Row, Col, Button, FormGroup} from 'react-bootstrap'
+import { Form, Row, Col, Button} from 'react-bootstrap'
 
-const FeedbackPage = () => {
-    const [articles, setArticles] = useState([])
-    const [title, setTitle] = useState("")
-    const [raiting, setRaiting] = useState("")
-    const [message, setMessage] = useState("")
-    const [user, setUser] = useState("test")
-    const [validated, setValidated] = useState(false)
-    const csrftoken = Cookies.get('csrftoken');
+const FeedbackPage = (props) => {
     
+    const [validated, setValidated] = useState(false)
+    const [state, setState] = useState({
+        title: '',
+        stars: '',
+        message: '',
+        user: 'test'
+    })
+    // const csrftoken = Cookies.get('csrftoken');
+    
+
     useEffect(() => {
-        // const options = {
-        //     "Content-type": "applicaon/json"
-        // }
-        axios.get('/api/articles/')
-        .then( response => {
-            setArticles(response.data.reverse())
-        })
-        .catch( err => console.log(err))
+       document.title = "Feedback"
+       props.getFeedbacks() 
     }, [])
 
-    const handleSubmit = (event) => {
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-        }
-
-        event.preventDefault();
-        setValidated(true);
-        const article = {
-            title: title,
-            message: message,
-            stars: raiting,
-            user: user
-        }
-        const headers = {
-            'X-CSRFToken': csrftoken
-        }
-        axios.post('/api/articles/', article, {
-            headers: headers
-        })
-        .then(response => {
-            axios.get('/api/articles/')
-            .then( response => {
-                setArticles(response.data.reverse())
-                setTitle("")
-                setRaiting("")
-                setMessage("")
-            })
-            .catch( err => console.log(err))
-        })
-        .catch( err => {
-            console.log(err)
-        })
+    const onChange = event => {
+        setState({[event.target.name]: event.target.value})
+        console.log(state)
     }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const {title, stars, message, user} = state
+        const feedback = {title, stars, message, user}
+        console.log(feedback)
+        props.addFeedback(feedback)
+    }
+
     const getDateFormat = (date) => {
-        console.log(date)
         const newDate = new Date(date)
         return newDate.toDateString()
     }
@@ -70,31 +46,62 @@ const FeedbackPage = () => {
                     <h5 className="feedback-heading-two">Home / Feedback</h5>
             </div>
             <div className="">
-                <div className="feedback-form-wrapper" style={{width: "100%", margin: "0 auto", background:"#00a6ce"}}>
-                    <h1 style={{textAlign: "center", padding:"1em 0 1em 0", color: "white"}}>Give us Feedback</h1>
-                    <Form className="feedback-form" noValidate validated={validated} onSubmit={handleSubmit}>
+                <div className="feedback-form-wrapper" 
+                style={{width: "100%", margin: "0 auto", background:"#00a6ce"}}>
+                    <h1 style={{textAlign: "center", padding:"1em 0 1em 0", color: "white"}}>
+                        Give us Feedback
+                    </h1>
+                    <Form 
+                    className="feedback-form" 
+                    noValidate 
+                    validated={validated} 
+                    onSubmit={handleSubmit}>
                         <Row>
                             <Col>
                                 <Form.Group controlId="">
-                                    <Form.Control required type="text" placeholder="Title" value={title} onChange={(e) => {setTitle(e.target.value)}} />
+                                    <Form.Control 
+                                    required 
+                                    type="text" 
+                                    placeholder="Title" 
+                                    name="title" 
+                                     
+                                    onChange={onChange} />
                                 </Form.Group>
                             </Col>
                             <Col>
                                 <Form.Group controlId="">
-                                    <Form.Control min={1} max={5} required type="number" placeholder="Raiting 1-5" value={raiting} onChange={(e) => {setRaiting(e.target.value)}} />
+                                    <Form.Control 
+                                    min={1} 
+                                    max={5} 
+                                    required 
+                                    type="number"
+                                    placeholder="Raiting 1-5" 
+                                    name="stars" 
+                                     
+                                    onChange={onChange} />
                                 </Form.Group>
                             </Col>
                         </Row>
                         <Row>
                             <Form.Group controlId="">
-                                <Form.Control required rows="2" as="textarea" type="text" placeholder="Message" value={message} onChange={(e) => {setMessage(e.target.value)}} />
+                                <Form.Control 
+                                required 
+                                rows="2" 
+                                as="textarea" 
+                                type="text" 
+                                placeholder="Message" 
+                                name="message" 
+                                
+                                onChange={onChange} />
                             </Form.Group>
                         </Row>
-                        <Button className="form-btn" type="submit">Submit  &#10140;</Button>
+                        <Button className="form-btn" type="submit">
+                            Submit  &#10140;
+                        </Button>
                     </Form>
                 </div>
                 <h1 style={{textAlign: "center", margin:"1em 0 1em 0",}}>Customers Feedback</h1>
-                {articles.map(article => (
+                {props.feedbacks.map(article => (
                     <div className="container" style={{display: "flex", justifyContent: "center"}}>
                         <Card key={article.id} className="text-center" style={{width: "60%", border: "1px solid black", margin: "5px"}}>
                             <Card.Header style={{ background: "#00a6ce", color: "white", fontWeight: "bold"}}>{article.title}</Card.Header>
@@ -120,5 +127,15 @@ const FeedbackPage = () => {
         </>
     )
 }
+    
+FeedbackPage.propTypes = {
+    feedbacks: PropTypes.array.isRequired
+}
 
-export default FeedbackPage
+const mapStateToProps = state => ({
+    feedbacks: state.feedbacks.feedbacks,
+    getFeedbacks: PropTypes.func.isRequired,
+    addFeedback: PropTypes.func.isRequired
+})
+
+export default connect(mapStateToProps, { getFeedbacks, addFeedback })(FeedbackPage)

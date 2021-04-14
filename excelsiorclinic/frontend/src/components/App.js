@@ -1,11 +1,11 @@
 import React, { Suspense } from "react"
 import { render } from "react-dom"
 import { BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom"
-
+import { Provider } from 'react-redux'
+import store from '../store'
 
 import Navbar from "./layout/Navbar"
 import Footer from "./layout/Footer"
-
 
 import HomePage from './HomePage/HomePage'
 import AboutPage from './AboutPage/AboutPage'
@@ -20,26 +20,28 @@ import FeedbackPage from './FeedbackPage/FeedbackPage'
 
 export const App = (props) => {
     return (
-        <div className="app-wrapper">
-             <Router>
-                <Navbar />
-                <Suspense fallback={<div>Loading...</div>}>
-                    <Switch>
-                        <Route exact path="/" component={HomePage}/>
-                        <Route  path="/about" component={AboutPage} />
-                        <Route  path="/services" component={ServicesPage} />
-                        <Route  path="/gallery" component={GalleryPage} />
-                        <Route  path="/news" component={NewsPage} />
-                        <Route  path="/contacts" component={ContactsPage} />
-                        {/* Not for user registration */}
-                        <Route  path="/registration" component={RegistrationPage} />
-                        <Route  path="/feedback" component={FeedbackPage} />
+        <Provider store={store}>
+            <div className="app-wrapper">
+                <Router>
+                    <Navbar />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Switch>
+                            <Route exact path="/" component={HomePage}/>
+                            <Route  path="/about" component={AboutPage} />
+                            <Route  path="/services" component={ServicesPage} />
+                            <Route  path="/gallery" component={GalleryPage} />
+                            <Route  path="/news" component={NewsPage} />
+                            <Route  path="/contacts" component={ContactsPage} />
+                            {/* Not for user registration */}
+                            <Route  path="/registration" component={RegistrationPage} />
+                            <Route  path="/feedback" component={FeedbackPage} />
 
-                    </Switch>
-                </Suspense>
-                <Footer />
-            </Router>
-        </div>
+                        </Switch>
+                    </Suspense>
+                    <Footer />
+                </Router>
+            </div>
+        </Provider>
     )
 }
 
