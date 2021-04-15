@@ -30,12 +30,11 @@ const FeedbackPage = (props) => {
     }
     const clearFields = () => {
         setState({
+            ...state,
             title: "",
             stars: "",
             message: "",
-            user: ""
         })
-        console.log(state)
     }
 
     const handleSubmit = (event) => {
@@ -76,7 +75,7 @@ const FeedbackPage = (props) => {
                                     type="text" 
                                     placeholder="Title" 
                                     name="title" 
-                                     
+                                    value={state.title}
                                     onChange={onChange} />
                                 </Form.Group>
                             </Col>
@@ -89,7 +88,7 @@ const FeedbackPage = (props) => {
                                     type="number"
                                     placeholder="Rate us 1-5" 
                                     name="stars" 
-                                     
+                                    value={state.stars}
                                     onChange={onChange} />
                                 </Form.Group>
                             </Col>
@@ -103,7 +102,7 @@ const FeedbackPage = (props) => {
                                 type="text" 
                                 placeholder="Message" 
                                 name="message" 
-                                
+                                value={state.message}
                                 onChange={onChange} />
                             </Form.Group>
                         </Row>
@@ -147,7 +146,7 @@ FeedbackPage.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    feedbacks: state.feedbacks.feedbacks
+    feedbacks: state.feedbacks.feedbacks.reverse()
 })
 
 export default connect(mapStateToProps, { getFeedbacks, addFeedback })(FeedbackPage)

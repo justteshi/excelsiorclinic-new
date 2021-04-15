@@ -11,7 +11,7 @@ export const getFeedbacks = () => dispatch => {
     .then(res => {
         dispatch({
             type: GET_FEEDBACKS,
-            payload: res.data.reverse()
+            payload: res.data
         })
     })
     .catch(err=>console.log(err))

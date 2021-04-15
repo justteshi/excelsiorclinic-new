@@ -1,19 +1,52 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+
 import { Form, Row, Col, Button, FormGroup} from 'react-bootstrap'
 
 
-const WriteUsSection = () => {
+const WriteUsSection = (props) => {
     const [validated, setValidated] = useState(false)
+    const [state, setState] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        departament: "",
+        adress: "",
+        message: ""
+    })
+
+
+    const onChange = event => {
+        setState({
+            ...state,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    const clearFields = () => {
+        setState({
+            ...state,
+            name: "",
+            email: "",
+            phone: "",
+            departament: "departaments",
+            adress: "",
+            message: ""
+        })
+
+    }
 
     const handleSubmit = (event) => {
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
         event.preventDefault()
-        event.stopPropagation()
-        }
+        const {name, email, phone, departament, adress, message} = state
+        const writeUs = {name, email, phone, departament, adress, message}
+        // console.log(feedback)
+        props.addWriteUs(writeUs)
+        clearFields()
+    }
 
-        setValidated(true);
-    };
+
     const style = {
         height: "1000px",
         width: "100%",
@@ -31,31 +64,57 @@ const WriteUsSection = () => {
                 <p className="write-us-text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum rerum, suscipit pariatur quos atque voluptas explicabo beatae quia sunt esse inventore sint odit recusandae similique dolores est necessitatibus quo totam.
                 </p>
-                <Form className="write-us-form" validated={validated} onSubmit={handleSubmit}>
+                <Form className="write-us-form" noValidate validated={validated} onSubmit={handleSubmit}>
                     <Row>
                         <Col>
-                            <Form.Group controlId="validationCustom01">
-                                <Form.Control required type="text" placeholder="Name" />
+                            <Form.Group controlId="">
+                                <Form.Control
+                                required
+                                type="text"
+                                placeholder="Name"
+                                name="name"
+                                value={state.name}
+                                onChange={onChange} />
                             </Form.Group>
                         </Col>
                         <Col>
-                            <Form.Group controlId="validationCustom01">
-                                <Form.Control required type="email" placeholder="Email" />
+                            <Form.Group controlId="">
+                                <Form.Control 
+                                required 
+                                type="email" 
+                                placeholder="Email"
+                                name="email"
+                                value={state.email}
+                                onChange={onChange} />
                             </Form.Group>
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Form.Group controlId="validationCustom03">
-                                <Form.Control required type="phone" placeholder="Phone" />
+                            <Form.Group controlId="">
+                                <Form.Control 
+                                required 
+                                type="phone"
+                                placeholder="Phone"
+                                name="phone"
+                                value={state.phone}
+                                onChange={onChange} />
                             </Form.Group>
                         </Col>
                         <Col>
-                            <Form.Group controlId="validationCustom04">
-                                <Form.Control required as="select" custom size="lg" placeholder="Departaments" >
-                                    <option>Departaments</option>
-                                    <option>Teeth Cleaning</option>
+                            <Form.Group controlId="">
+                                <Form.Control 
+                                
+                                as="select" 
+                                custom 
+                                size="lg" 
+                                placeholder="Departaments"
+                                name="departaments"
+                                value={state.departament}
+                                onChange={onChange} >
+                                    <option value="Departaments">Departaments</option>
+                                    <option value="teeth-cleaning">Teeth Cleaning</option>
                                     <option>Teeth Whitening</option>
                                     <option>Brackets</option>
                                     <option>Option 4</option>
@@ -68,14 +127,28 @@ const WriteUsSection = () => {
                     <Row>
                         <Col>
                             <Form.Group controlId="validationCustom05">
-                                <Form.Control required type="text" placeholder="Adress" />
+                                <Form.Control 
+                                required 
+                                type="text" 
+                                placeholder="Adress"
+                                name="adress"
+                                value={state.adress}
+                                onChange={onChange} />
                             </Form.Group>
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                        <Form.Control className="message-input" rows="5" as="textarea" type="text" placeholder="Message" />
+                            <Form.Control 
+                            className="message-input" 
+                            rows="5" 
+                            as="textarea" 
+                            type="text" 
+                            placeholder="Message"
+                            name="message"
+                            value={state.message}
+                            onChange={onChange}/>
                         </Col>
                     </Row>
                     <Button  className="form-btn" type="submit">Submit  &#10140;</Button>
@@ -85,4 +158,14 @@ const WriteUsSection = () => {
     )
 }
 
-export default WriteUsSection
+
+WriteUsSection.propTypes = {
+    writeUs: PropTypes.array.isRequired,
+    addWriteUs: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+    writeUs: state.writeus.writeUs
+})
+
+export default connect(mapStateToProps, { addWriteUs })(WriteUsSection)

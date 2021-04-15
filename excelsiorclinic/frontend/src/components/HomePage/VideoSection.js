@@ -12,11 +12,18 @@ const VideoSection = () => {
     }
     return (
         <div className="container" style={style}>
-            <div className="video-wrapper">
+            <iframe src='https://www.youtube.com/embed/lR2XfZ755Qs'
+                frameBorder='0'
+                allow='autoplay; encrypted-media'
+                allowFullScreen
+                title='video'
+                className="video-wrapper"
+            />
+            {/* <div className="video-wrapper">
                 <div className="play-btn">
                     <FontAwesomeIcon icon={faPlay} size="3x"/>
                 </div>
-            </div>
+            </div> */}
             <div className="choose-us-headng meet-our-doctors">
                         <h1>Our</h1> 
                         <h1>Clinic</h1>
@@ -25,7 +32,7 @@ const VideoSection = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum rerum, suscipit pariatur quos atque voluptas explicabo beatae quia sunt esse inventore sint odit recusandae similique dolores est necessitatibus quo totam.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum rerum, suscipit pariatur quos atque voluptas explicabo beatae quia sunt esse inventore sint odit recusandae similique dolores est necessitatibus quo totam.
             </p>
-            <Link className="video-btn" to="/">Read more  &#10140;</Link>
+            <Link  className="video-btn" to="/">Read more  &#10140;</Link>
         </div>
     )
 }

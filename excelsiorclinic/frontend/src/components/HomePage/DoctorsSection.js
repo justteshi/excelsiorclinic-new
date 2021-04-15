@@ -20,7 +20,6 @@ const DoctorsSection = () => {
             console.log(err)
         })
     }, [])
-    console.log(doctors)
     const style = {
         height: "1000px",
         background: "",
@@ -39,7 +38,7 @@ const DoctorsSection = () => {
             <div className="doctors-wrapper">
                 {firstThree.map( doctor => (
                     <div className="doctor-wrapper" key={doctor.id}>
-                        <div className="doctor-img">
+                        <div className="doctor-img" style={{backgroundImage:`url(${doctor.doctor_image})`}}>
                             <div className="doctor-icon">
                             <FontAwesomeIcon icon={faTooth} />
                             </div>

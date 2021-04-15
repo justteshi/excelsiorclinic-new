@@ -1,22 +1,46 @@
 import React, {useState, useEffect} from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { addContact } from '../../actions/contacts'
 import { Map, Marker } from "pigeon-maps"
 import { Form, Row, Col, Button, FormGroup} from 'react-bootstrap'
 
 
-const ContactsPage = () => {
-    const [fullName, setFullName] = useState("")
-    const [phoneNumber, setPhoneNumber] = useState("")
-    const [message, setMessage] = useState("")
+const ContactsPage = (props) => {
+    const [state, setState] = useState({
+        name: "",
+        phone: "",
+        message: ""
+    })
 
     useEffect(() => {
         document.title = "Contacts"
-        
-     }, [])
+    }, [])
+
+    const onChange = event => {
+        setState({
+            ...state,
+            [event.target.name]: event.target.value
+        })
+    }
+    const clearFields = () => {
+        setState({
+            ...state,
+            name: "",
+            phone: "",
+            message: "",
+        })
+    }
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault()
+        const {name, phone, message} = state
+        const contact = {name, phone, message}
 
+        props.addContact(contact)
+        clearFields()
     }
+
     return (
         <div>
             <div className="contact-us-cover-img">
@@ -42,20 +66,40 @@ const ContactsPage = () => {
                     </div>
                 </div>
                 <div className="contact-us-right" style={{width: "50%", marginLeft: "1em"}}>
-                    <Form className="contact-us-form" onSubmit={handleSubmit}>
+                    <Form className="contact-us-form" onSubmit={handleSubmit} noValidate>
                         <Row>
                             <Form.Group controlId="validationCustom01">
-                                <Form.Control required type="text" placeholder="Full Name" value={fullName} onChange={(e) => {setFullName(e.target.value)}} />
+                                <Form.Control 
+                                required 
+                                type="text" 
+                                placeholder="Full Name" 
+                                name="name"
+                                value={state.name} 
+                                onChange={onChange} />
                             </Form.Group>
                         </Row>
                         <Row>
                             <Form.Group controlId="validationCustom01">
-                                <Form.Control required type="text" placeholder="Phone Number" value={phoneNumber} onChange={(e) => {setPhoneNumber(e.target.value)}} />
+                                <Form.Control 
+                                required 
+                                type="text" 
+                                placeholder="Phone Number"
+                                name="phone" 
+                                value={state.phone} 
+                                onChange={onChange} />
                             </Form.Group>
                         </Row>
                         <Row>
                             <Form.Group controlId="validationCustom01">
-                                <Form.Control required rows="6" as="textarea" type="text" placeholder="Leave Message" value={message} onChange={(e) => {setMessage(e.target.value)}} />
+                                <Form.Control 
+                                required 
+                                rows="6" 
+                                as="textarea" 
+                                type="text" 
+                                placeholder="Leave Message" 
+                                name="message"
+                                value={state.message} 
+                                onChange={onChange} />
                             </Form.Group>
                         </Row>
                         <Button className="contact-us-btn" type="submit">Send message  &#10140;</Button>
@@ -69,4 +113,12 @@ const ContactsPage = () => {
     )
 }
 
-export default ContactsPage
+ContactsPage.propTypes = {
+    addContact: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+    contacts: state.contacts.contacts
+})
+
+export default connect(mapStateToProps, { addContact })(ContactsPage)
