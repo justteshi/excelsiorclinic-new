@@ -6,6 +6,7 @@ const NewsPage = () => {
     const [news, setNews] = useState([])
 
     useEffect(() => {
+        document.title = "News"
         axios.get('/api/news/')
         .then(response => {
             setNews(response.data)

@@ -8,7 +8,10 @@ const ContactsPage = () => {
     const [phoneNumber, setPhoneNumber] = useState("")
     const [message, setMessage] = useState("")
 
-
+    useEffect(() => {
+        document.title = "Contacts"
+        
+     }, [])
 
     const handleSubmit = (event) => {
         event.preventDefault();

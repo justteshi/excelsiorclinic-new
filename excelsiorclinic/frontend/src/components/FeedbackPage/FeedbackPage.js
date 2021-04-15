@@ -9,10 +9,10 @@ const FeedbackPage = (props) => {
     
     const [validated, setValidated] = useState(false)
     const [state, setState] = useState({
-        title: '',
-        stars: '',
-        message: '',
-        user: 'test'
+        title: "",
+        stars: "",
+        message: "",
+        user: "test"
     })
     // const csrftoken = Cookies.get('csrftoken');
     
@@ -23,7 +23,18 @@ const FeedbackPage = (props) => {
     }, [])
 
     const onChange = event => {
-        setState({[event.target.name]: event.target.value})
+        setState({
+            ...state,
+            [event.target.name]: event.target.value
+        })
+    }
+    const clearFields = () => {
+        setState({
+            title: "",
+            stars: "",
+            message: "",
+            user: ""
+        })
         console.log(state)
     }
 
@@ -33,6 +44,7 @@ const FeedbackPage = (props) => {
         const feedback = {title, stars, message, user}
         console.log(feedback)
         props.addFeedback(feedback)
+        clearFields()
     }
 
     const getDateFormat = (date) => {
@@ -75,7 +87,7 @@ const FeedbackPage = (props) => {
                                     max={5} 
                                     required 
                                     type="number"
-                                    placeholder="Raiting 1-5" 
+                                    placeholder="Rate us 1-5" 
                                     name="stars" 
                                      
                                     onChange={onChange} />
@@ -129,13 +141,13 @@ const FeedbackPage = (props) => {
 }
     
 FeedbackPage.propTypes = {
-    feedbacks: PropTypes.array.isRequired
+    feedbacks: PropTypes.array.isRequired,
+    getFeedbacks: PropTypes.func.isRequired,
+    addFeedback: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-    feedbacks: state.feedbacks.feedbacks,
-    getFeedbacks: PropTypes.func.isRequired,
-    addFeedback: PropTypes.func.isRequired
+    feedbacks: state.feedbacks.feedbacks
 })
 
 export default connect(mapStateToProps, { getFeedbacks, addFeedback })(FeedbackPage)

@@ -11,6 +11,7 @@ const ServicesPage = () => {
     const secondFour = services.slice(4,8)
 
     useEffect(() => {
+        document.title = "Services"
         axios.get('/api/services/')
         .then( response => {
             setServices(response.data)

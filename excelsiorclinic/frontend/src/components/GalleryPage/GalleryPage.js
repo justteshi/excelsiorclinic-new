@@ -1,8 +1,13 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Gallery from 'react-grid-gallery'
 import { render } from 'react-dom'
 
 const GalleryPage = () => {
+
+    useEffect(() => {
+        document.title = "Gallery"
+        
+     }, [])
 
     const IMAGES = [
         {
