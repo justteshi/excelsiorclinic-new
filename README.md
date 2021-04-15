@@ -1,5 +1,5 @@
 # Excelsior Clinic Web App
-Informative web application for Excelsior Clinic where u can book your dental service online.
+Informative web application for Excelsior Clinic where you can book your dental service online.
 
 ## About
 [Django](https://www.djangoproject.com/) project with:
@@ -52,16 +52,17 @@ Informative web application for Excelsior Clinic where u can book your dental se
  python manage.py runserver
  ```
  8. Open browser and go to ```bash  http://localhost:8000 ```
+ 9. Go to http://localhost:8000/admin , login and create 4-8 Services, 1-3 Doctors and some NewsArticles if you want.
 ### Front-end
- 9. navigate to the mai folder
+ 10. navigate to the mai folder
  ```bash
  cd ..
  ```
- 10. Install dependencies
+ 11. Install dependencies
  ```bash
  npm install
  ```
- 11. Run watch
+ 12. Run watch
  ```bash
  npm run dev
  ```
