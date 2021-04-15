@@ -9,7 +9,7 @@ Informative web application for Excelsior Clinic where you can book your dental 
 * [Webpack](https://webpack.js.org/) for bundling static assets
 * [Babel](https://babeljs.io/) JavaScript compiler.
 * [axios](https://www.npmjs.com/package/axios) Promise based HTTP client 
-
+* [redux](https://redux.js.org/)A Predictable State Container
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/45295214/114600153-b460b500-9c9c-11eb-9188-1a8f29703e1f.png)
 
