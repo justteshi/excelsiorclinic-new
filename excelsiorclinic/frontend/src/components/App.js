@@ -1,11 +1,14 @@
 import React, { Suspense } from "react"
 import { render } from "react-dom"
 import { BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom"
+import { Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
 import { Provider } from 'react-redux'
 import store from '../store'
 
 import Navbar from "./layout/Navbar"
 import Footer from "./layout/Footer"
+
 
 import HomePage from './HomePage/HomePage'
 import AboutPage from './AboutPage/AboutPage'
@@ -18,12 +21,21 @@ import FeedbackPage from './FeedbackPage/FeedbackPage'
 
 
 
+//Alerts Options
+
+const alertOptions = {
+    timeout: 3000,
+    position: "top center"
+}
+
 export const App = (props) => {
     return (
         <Provider store={store}>
+        <AlertProvider template={AlertTemplate} {...alertOptions}>
             <div className="app-wrapper">
                 <Router>
                     <Navbar />
+                    
                     <Suspense fallback={<div>Loading...</div>}>
                         <Switch>
                             <Route exact path="/" component={HomePage}/>
@@ -32,7 +44,7 @@ export const App = (props) => {
                             <Route  path="/gallery" component={GalleryPage} />
                             <Route  path="/news" component={NewsPage} />
                             <Route  path="/contacts" component={ContactsPage} />
-                            {/* Not for user registration */}
+                            
                             <Route  path="/registration" component={RegistrationPage} />
                             <Route  path="/feedback" component={FeedbackPage} />
 
@@ -40,7 +52,9 @@ export const App = (props) => {
                     </Suspense>
                     <Footer />
                 </Router>
+                
             </div>
+        </AlertProvider>
         </Provider>
     )
 }

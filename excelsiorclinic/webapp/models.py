@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class User(models.Model):
     name = models.CharField(max_length=50)
@@ -14,7 +15,7 @@ class FeedbackArticle(models.Model):
     title = models.CharField(max_length=50)
     message = models.CharField(max_length=256)
     user = models.CharField(max_length=20)
-    stars = models.IntegerField(default=1)
+    stars = models.IntegerField(default=1, validators=[MaxValueValidator(5), MinValueValidator(1)])
     creted_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -65,7 +66,7 @@ class WriteUSForm(models.Model):
 class ContactUsForm(models.Model):
     name = models.CharField(max_length=50)
     phone = models.CharField(max_length=50)
-    message = models.CharField(max_length=500)
+    messageOne = models.CharField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):

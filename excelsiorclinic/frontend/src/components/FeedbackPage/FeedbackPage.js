@@ -4,6 +4,9 @@ import PropTypes from 'prop-types'
 import { getFeedbacks, addFeedback } from '../../actions/feedbacks'
 import { Card } from 'react-bootstrap/'
 import { Form, Row, Col, Button} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+import FeedbackAlerts from './FeedbackAlerts'
 
 const FeedbackPage = (props) => {
     
@@ -50,8 +53,21 @@ const FeedbackPage = (props) => {
         const newDate = new Date(date)
         return newDate.toDateString()
     }
+
+    const showRatingToStars = (rating) => {
+        const stars = []
+        for (let i = 0; i < rating; i++) {
+            stars.push(
+                <FontAwesomeIcon className="service-tap-par-icoon"  icon={faStar} />
+            )
+        }
+        return stars    
+        
+    }
+
     return (
         <>
+            <FeedbackAlerts />  
             <div className="feedback-cover-img">
                     <h1 className="feedback-heading-one">Feedback</h1>
                     <h5 className="feedback-heading-two">Home / Feedback</h5>
@@ -120,10 +136,9 @@ const FeedbackPage = (props) => {
                                 <Card.Text style={{fontStyle: "italic"}}>
                                 - "{article.message}"
                                 </Card.Text>
-                                <Card.Text >
-                                Rating: {article.stars} / 5
-                                </Card.Text>
-                                
+                                <div className="feedback-stars" style={{display: "flex", justifyContent: "center"}}> 
+                                    {showRatingToStars(article.stars)}
+                                </div>
                             </Card.Body>
                             <Card.Footer className="text-muted">
                                 <div style={{display: "flex", justifyContent: "space-between"}}>
@@ -146,7 +161,7 @@ FeedbackPage.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    feedbacks: state.feedbacks.feedbacks.reverse()
+    feedbacks: state.feedbacks.feedbacks
 })
 
 export default connect(mapStateToProps, { getFeedbacks, addFeedback })(FeedbackPage)

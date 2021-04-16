@@ -507,6 +507,10 @@ hr{
 .video-btn {
     text-decoration: none;
     color: #00a6ce;
+    position: relative;
+    top: 0%;
+    left: 50%;
+    margin-left: -50px;
 }
 .video-btn:hover {
     color: #00a6ce;
@@ -647,6 +651,9 @@ select::-ms-expand {
 }
 .feedback-form textarea {
     resize: none;
+}
+.feedback-stars svg path {
+    color: rgb(223, 202, 13);
 }
 
 
