@@ -1,13 +1,21 @@
 from rest_framework import viewsets, permissions
-from .models import User, FeedbackArticle, Service, Doctor, NewsArticle, WriteUSForm, ContactUsForm
-from .serializers import UserSerializer, FeedbackArticleSerializer, ServiceSerializer, DoctorSerializer ,NewsArticleSerializer, WriteUSFormSerializer, ContactUsFormSerializer
+from .models import Registration, FeedbackArticle, Service, Doctor, NewsArticle, WriteUSForm, ContactUsForm
+from .serializers import RegistrationSerializer, FeedbackArticleSerializer, ServiceSerializer, DoctorSerializer ,NewsArticleSerializer, WriteUSFormSerializer, ContactUsFormSerializer
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    permissions_classes = [
-        permissions.AllowAny
+
+class RegistrationViewSet(viewsets.ModelViewSet):
+    permission_classes = [
+        permissions.IsAuthenticated
     ]
-    serializer_class = UserSerializer
+    
+    serializer_class = RegistrationSerializer
+
+    def get_queryset(self):
+        return self.request.user.registration.all()
+    
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+    
 
 
 class FeedbackArticleViewSet(viewsets.ModelViewSet):

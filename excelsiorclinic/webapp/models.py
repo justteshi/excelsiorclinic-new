@@ -1,14 +1,14 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-class User(models.Model):
-    name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=254)
-    message = models.CharField(max_length=50)
-    creted_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.name
+class Registration(models.Model):
+    day = models.CharField(max_length=100)
+    time = models.CharField(max_length=100)
+    owner = models.ForeignKey(User, related_name="registration", on_delete=models.CASCADE, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
 
 
 class FeedbackArticle(models.Model):

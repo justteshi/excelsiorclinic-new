@@ -4,6 +4,7 @@ Informative web application for Excelsior Clinic where you can book your dental 
 ## About
 [Django](https://www.djangoproject.com/) project with:
 * [Django REST](https://www.django-rest-framework.org/) powerful and flexible toolkit for building Web APIs.
+* [Djano REST knox](https://pypi.org/project/django-rest-knox/) Authentication Module for django rest auth
 * [React](https://reactjs.org/) for building interactive UIs
 * [React Bootstrap](https://react-bootstrap.github.io/) for responsive styling
 * [Webpack](https://webpack.js.org/) for bundling static assets
