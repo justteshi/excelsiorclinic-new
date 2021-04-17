@@ -25,6 +25,10 @@ const Navbar = () => {
                 /
                 <li><NavLink to="/feedback" activeStyle={navStylesActive}>Feedback</NavLink></li>
                 <li><NavLink to="/registration" activeStyle={navStylesActive}>Registration</NavLink></li>
+                <li><NavLink to="/login" activeStyle={navStylesActive}>Login</NavLink></li>
+                <li><NavLink to="/sign-up" activeStyle={navStylesActive}>Sign Up</NavLink></li>
+
+                
                 
             </ul>
             {/* <nav>

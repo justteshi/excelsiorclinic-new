@@ -797,6 +797,56 @@ select::-ms-expand {
     text-shadow: 1px black;
 }
 
+/* 404 */
+
+.mainbox {
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    position: relative;
+}
+
+.not-found-err {
+    color: #00a6ce;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position:absolute;
+    left: 20%;
+    top: 8%;
+}
+
+.not-found-far {
+    color: #00a6ce;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position: absolute;
+    font-size: 11rem;
+    left: 43%;
+    top: 8%;
+
+}
+
+.not-found-err2 {
+    color: #00a6ce;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position:absolute;
+    left: 68%;
+    top: 8%;
+}
+
+.not-found-msg {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+    position:absolute;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+    color: #666666;
+}
+  
+
 /* KeyFrames */
 
 @keyframes slideInFromLeft {

@@ -1,12 +1,13 @@
 import axios from 'axios'
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 axios.defaults.xsrfCookieName = "csrftoken";
-import { ADD_CONTACT, GET_ERRORS } from './types'
+import { returnErrors } from './errors'
+import { ADD_CONTACT } from './types'
 
 
 //Add Feedback
 export const addContact = (contact) => dispatch => {
-    const csrftoken = Cookies.get('csrftoken');
+;
     axios
     .post('/api/contact-us/', contact)
     .then(res => {
@@ -15,14 +16,5 @@ export const addContact = (contact) => dispatch => {
             payload: res.data
         })
     })
-    .catch(err=> {
-        const errors = {
-            msg: err.response.data,
-            status: err.response.status
-        }
-        dispatch({
-            type: GET_ERRORS,
-            payload: errors
-        })
-    })
+    .catch(err=> dispatch(returnErrors(err.response.data, err.response.status)))
 }

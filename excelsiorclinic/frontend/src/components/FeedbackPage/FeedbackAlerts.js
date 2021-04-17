@@ -8,9 +8,7 @@ const FeedbackAlerts = (props) => {
     const alert = useAlert()
 
     useEffect(() => {
-        console.log(props.page)
         const {error} = props
-        console.log(error)
         if (error.status !== null){
             if(error.msg.title) {
                 alert.error(`Title: ${error.msg.title.join()}`)

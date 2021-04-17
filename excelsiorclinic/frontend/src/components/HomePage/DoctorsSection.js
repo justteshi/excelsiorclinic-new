@@ -25,6 +25,7 @@ const DoctorsSection = () => {
         background: "",
         paddingTop: "4em"
     }
+    console.log(firstThree)
     return (
         <div className="container our-doctors" style={style}>
             <div className="doctors-heading">

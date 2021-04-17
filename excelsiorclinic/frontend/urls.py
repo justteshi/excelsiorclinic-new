@@ -1,7 +1,8 @@
-from django.urls import path
+from django.urls import path, re_path
 from .views import index
 
 urlpatterns = [
+    re_path('.*/',index),
     path('', index),
     path('about', index),
     path('services', index),
@@ -10,5 +11,4 @@ urlpatterns = [
     path('contacts', index),
     path('registration', index),
     path('feedback', index),
-
 ]

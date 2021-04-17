@@ -2,6 +2,7 @@
 import axios from 'axios'
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 axios.defaults.xsrfCookieName = "csrftoken";
+import { returnErrors } from './errors'
 import { GET_FEEDBACKS, ADD_FEEDBACK, GET_ERRORS } from './types'
 
 //Get Feedbacks
@@ -14,7 +15,7 @@ export const getFeedbacks = () => dispatch => {
             payload: res.data
         })
     })
-    .catch(err=>console.log(err))
+    .catch(err=> dispatch(returnErrors(err.response.data, err.response.status)))
 }
 //Add Feedback
 export const addFeedback = (feedback) => dispatch => {
@@ -29,14 +30,5 @@ export const addFeedback = (feedback) => dispatch => {
             payload: res.data
         })
     })
-    .catch(err=> {
-        const errors = {
-            msg: err.response.data,
-            status: err.response.status
-        }
-        dispatch({
-            type: GET_ERRORS,
-            payload: errors
-        })
-    })
+    .catch(err=> dispatch(returnErrors(err.response.data, err.response.status)))
 }

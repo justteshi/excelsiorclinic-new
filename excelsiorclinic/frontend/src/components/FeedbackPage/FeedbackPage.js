@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { getFeedbacks, addFeedback } from '../../actions/feedbacks'
+import { clearErrors } from '../../actions/errors'
+
 import { Card } from 'react-bootstrap/'
 import { Form, Row, Col, Button} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -22,9 +24,13 @@ const FeedbackPage = (props) => {
 
     useEffect(() => {
        document.title = "Feedback"
-       props.getFeedbacks() 
+       props.getFeedbacks()
+       return () => {
+           props.clearErrors()
+       }
     }, [])
-
+    
+    console.log(props)
     const onChange = event => {
         setState({
             ...state,
@@ -155,6 +161,7 @@ const FeedbackPage = (props) => {
 }
     
 FeedbackPage.propTypes = {
+    clearErrors: PropTypes.func.isRequired,
     feedbacks: PropTypes.array.isRequired,
     getFeedbacks: PropTypes.func.isRequired,
     addFeedback: PropTypes.func.isRequired
@@ -164,4 +171,4 @@ const mapStateToProps = state => ({
     feedbacks: state.feedbacks.feedbacks
 })
 
-export default connect(mapStateToProps, { getFeedbacks, addFeedback })(FeedbackPage)
+export default connect(mapStateToProps, { getFeedbacks, addFeedback, clearErrors })(FeedbackPage)

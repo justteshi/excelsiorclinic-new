@@ -1,7 +1,7 @@
 import { GET_FEEDBACKS, ADD_FEEDBACK } from '../actions/types'
 
 const initialState = {
-    feedbacks: []
+    feedbacks: [],
 }
 
 

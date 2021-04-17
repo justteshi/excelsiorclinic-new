@@ -1,4 +1,4 @@
-import React, { Suspense } from "react"
+import React, { Suspense, useEffect } from "react"
 import { render } from "react-dom"
 import { BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom"
 import { Provider as AlertProvider } from 'react-alert'
@@ -18,17 +18,23 @@ import NewsPage from './NewsPage/NewsPage'
 import ContactsPage from './ContactsPage/ContactsPage'
 import RegistrationPage from './RegistrationPage/RegistrationPage'
 import FeedbackPage from './FeedbackPage/FeedbackPage'
+import NotFoundPage from './NotFoundPage/NotFoundPage'
+import LoginPage from "./LoginPage/LoginPage"
+import RegisterPage from "./RegisterPage/RegisterPage"
+import PrivateRoute from "./accounts/PrivateRoute"
 
+// import { loadUser } from '../actions/auth'
 
 
 //Alerts Options
-
 const alertOptions = {
     timeout: 3000,
     position: "top center"
 }
 
 export const App = (props) => {
+
+    
     return (
         <Provider store={store}>
         <AlertProvider template={AlertTemplate} {...alertOptions}>
@@ -45,8 +51,14 @@ export const App = (props) => {
                             <Route  path="/news" component={NewsPage} />
                             <Route  path="/contacts" component={ContactsPage} />
                             
-                            <Route  path="/registration" component={RegistrationPage} />
-                            <Route  path="/feedback" component={FeedbackPage} />
+                            <PrivateRoute  path="/registration" component={RegistrationPage} />
+                            <PrivateRoute  path="/feedback" component={FeedbackPage} />
+
+                            <Route  path="/login" component={LoginPage} />
+                            <Route  path="/sign-up" component={RegisterPage} />
+
+
+                            <Route component={NotFoundPage} />
 
                         </Switch>
                     </Suspense>
