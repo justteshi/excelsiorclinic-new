@@ -3,16 +3,18 @@ import { Link } from 'react-router-dom'
 import { Nav,NavItem, Tab, Tabs } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTooth, faCheckDouble } from '@fortawesome/free-solid-svg-icons'
-
+import backgroundImage from '../../../static/images/2560x1000-right.png'
 
 const HealthServiceSection = () => {
     const style = {
-        height: "1000px",
+        height: "",
         width: "100%",
-        background: "#00a6ce",
-        paddingTop: "5em"
-    }
+        background: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        paddingTop: "14em",
 
+    }
+    console.log(backgroundImage)
 
     const HealthServicesTabTitle = () => {
         return (
@@ -44,7 +46,7 @@ const HealthServiceSection = () => {
         <div style={style}>
             <div className="container" style={{background:"", height:"800px", margin: "auto"}}>
                 <div className="health-service-heading">
-                    <div className="choose-us-headng health-service">
+                    <div className="styled-heading health-service">
                             <h1>Our</h1> 
                             <h1>Health</h1>
                             <h1>Services</h1>

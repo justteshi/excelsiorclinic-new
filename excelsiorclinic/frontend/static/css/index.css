@@ -54,37 +54,50 @@ body{
 
 
 /* Footer */
-
+.footer-wrapper {
+    padding-top: 2em;
+    background: #00a6ce;
+}
 
 .footer {
     width: 100%;
-    height: 400px;
     display: flex;
 }
 .footer h4 {
     font-weight: bold;
-    color: #00a6ce;
-    padding: 3em 0 1em 0;
+    color: white;
+    padding: 3em 0 0.5em 0;
+}
+.footer p {
+    color: white;
+
 }
 .clinic-info {
     width: 40%;
     display: block;
     margin: 0 2em 0 0;
+    color: white;
 }
 .dental-clinic {
     width: 20%;
     display: block;
     margin: 0 2em;
+    color: white;
+
 }
 .our-services {
     width: 20%;
     display: block;
     margin: 0 2em;
+    color: white;
+
 }
 .opening-hours {
     width: 20%;
     display: block;
     margin: 0 0 0 2em;
+    color: white;
+
 }
 .monday{
     display: flex;
@@ -113,6 +126,8 @@ body{
 .copyright{
     margin-bottom: 0;
     padding-bottom: 1em;
+    color: white;
+
 }
 hr{
     background: white;
@@ -170,7 +185,9 @@ hr{
 }
 .carousel .slide img {
     max-height: 800px;
+    object-fit: cover;
 }
+
 
 .view-btn {
 
@@ -179,13 +196,13 @@ hr{
     border-radius: 25px;
     padding: 0.5em 2em 0.5em 2em;
     width: 160px;
+    text-decoration: none;
+    color: white;
+    background: #00a6ce;
     position: absolute;
     bottom: 40%;
     left: 50%;
     margin-left: -80px;
-    background: #00a6ce;
-    color: white;
-    text-decoration: none;
 
 }
 .view-btn:hover {
@@ -198,9 +215,18 @@ hr{
 
 /* Choose Us Section */
 
+.gray-logo {
+    background: url('../images/logo_elelemnt_grey.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}
+
 .choose-us-right {
-    width: 40%;
+    width: 50%;
     display: block;
+    margin-left: 2em;
 }
 
 .choose-us-left  {
@@ -210,26 +236,33 @@ hr{
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: -20px 20px rgb(230, 229, 229);
-
+    margin-right: 2em;
 }
-.choose-us-headng {
+.choose-us {
+    width:fit-content;
+    background: url('../images/logo_elelemnt_grey.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+}
+.styled-heading {
     display: flex;
-    margin-top: 1em;
+    padding: 2em;
 }
-.choose-us-headng h1:nth-child(1) {
-    font-size: 2em;
+.styled-heading h1:nth-child(1) {
+
     font-weight: bold;
     color: #002169 ;
     margin-right: 0.5rem;
 }
-.choose-us-headng h1:nth-child(2) {
-    font-size: 2em;
+.styled-heading h1:nth-child(2) {
+
     font-weight: bold;
     color: #00a6ce;
     margin-right: 0.5rem;
 }
-.choose-us-headng h1:nth-child(3) {
-    font-size: 2em;
+.styled-heading h1:nth-child(3) {
+
     font-weight: bold;
     color: #00a6ce;
     
@@ -265,19 +298,21 @@ hr{
 
 
 
+
+
 /* Four Icons Section */
 
 .four-icons-section {
-    margin-top: 8em;
     width: 100%;
     height: 600px;
-    background-color: #00a6ce;
     display: flex;
     justify-content: space-around;
+    padding-top: 10em;
+    background: url('../images/2560x600-left.png');
+    background-repeat: no-repeat;
 }
 .icon-wrapper {
     margin: auto;
-    
     width: 20%;
     text-align: center;
 }
@@ -300,20 +335,22 @@ hr{
 .icon-btn {
     color: white;
     text-decoration: none;
-    
 }
 
 /* Meet Our Doctors Section */
 
 .doctors-heading {
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
     margin-bottom: 3em;
+    /* background: url("../../../static/images/logo_elelemnt_grey.png");
+    background-position: top center;
+    background-repeat: no-repeat; */
 }
 .meet-our-doctors {
     justify-content: center;
-    padding-top: 2em;
-    padding-bottom: 1em;
+    /* padding-top: 2em;
+    padding-bottom: 1em; */
 }
 .doctors-paragraph {
     text-align: center;
@@ -385,7 +422,6 @@ hr{
 .health-service-heading{
     width: 50%;
     margin: 0 auto;
-    margin-bottom: 3em;
 }
 .health-service {
     justify-content: center;
@@ -426,14 +462,13 @@ hr{
 }
 
 .services-tap-wrapper {
-    margin-top: 4em;
+    margin-top: 2em;
     display: flex;
     justify-content: space-between;
 
 }
 .services-tap-img {
     width: 40%;
-
     background: url("../../../static/images/health_service1.jpg");
     background-size: cover;
     background-position: right;
@@ -477,7 +512,7 @@ hr{
  /* Video Section */
 .video-wrapper {
     width: 100%;
-    height: 80%;
+    height: 70%;
     background: lightgrey;
     border-radius: 5px;
 }
@@ -500,6 +535,10 @@ hr{
 .play-btn:hover {
     background: gray;
     cursor: pointer;
+}
+.video-heading {
+    justify-content: center;
+    margin-top: 1em;
 }
 .video-text {
     text-align: center;
@@ -608,7 +647,7 @@ select::-ms-expand {
 
 /* Feedback Page */
 .feedback-cover-img {
-    height: 375px;
+    height: 500px;
     background: url('../images/gallery/gallery7.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -660,7 +699,7 @@ select::-ms-expand {
 /* Contact Us PAGE */
 
 .contact-us-cover-img {
-    height: 375px;
+    height: 500px;
     background: url('../images/gallery/gallery5.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -709,7 +748,7 @@ select::-ms-expand {
 /* About us Page */
 
 .about-us-cover-img {
-    height: 375px;
+    height: 500px;
     background: url('../images/gallery/gallery8.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -722,14 +761,14 @@ select::-ms-expand {
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: -20px 20px rgb(230, 229, 229);
+    margin-right: 2em;
 }
 .about-cards {
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .about-card {
     width: 250px;
-    text-align: center;
 }
 .card-img {
     width: 100%;
@@ -743,20 +782,20 @@ select::-ms-expand {
 .card-heading {
     margin-bottom: 1em;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 .about-card p {
     margin-bottom: 2em;
-    color: white;
+
 }
 .about-paragraph {
     text-align: center;
-    color: white;
+
 }
 
 /* Gallery Page */
 .gallery-cover-img {
-    height: 375px;
+    height: 500px;
     background: url('../images/gallery/gallery6.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -766,12 +805,15 @@ select::-ms-expand {
 /* Services Page */
 
 .services-cover-img {
-    height: 375px;
+    height: 500px;
     background: url('../images/gallery/gallery3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-position-y: ;
+    /* background-position-y: ; */
+}
+.service-card {
+    text-align: center;
 }
 .service-img {
     height: 100px;
@@ -786,16 +828,122 @@ select::-ms-expand {
     position: relative;
     top: 35%;
 }
+.service-btn {
+    text-decoration: none;
+    color: #00a6ce;
+}
+.service-btn:hover {
+    color: #00a6ce;
+    font-weight: bold;
+}
+.services-last-wrapper {
+    width: 100%;
+    height: 800px;
+    background: lightgray;
+}
+.service-last-right-left {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 60%; /*Change 100% responsive*/
+    padding-top: 6em;
+}
+.before-after-right {
+    width: 45%;
+    margin: 2em;
+}
+.before-after-left {
+    width: 55%;
+    margin: 2em;
+
+}
+.before-after-image {
+    background: rgb(179, 178, 178);
+    height: 550px;
+    border: 5px solid white;
+    border-radius: 5px;
+}
+.before-after-right p {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+.before-after-right .styled-heading {
+    font-size: 22px; /*Change smaller font-size responsive*/
+}
+.service-last-btn {
+    margin: auto;
+    border-radius: 25px;
+    padding: 0.5em 2em 0.5em 2em;
+    width: 160px;
+    text-decoration: none;
+    color: white;
+    background: #00a6ce;
+}
+.service-last-btn:hover {
+    color: white;   
+    box-shadow: 0 0 0 2px white;
+    /* border: 1px solid white; */
+    font-weight: bold;
+}
+
+
 
 /* News Page */
 .news-cover-img {
-    height: 375px;
+    height: 500px;
     background: url('../images/gallery/gallery4.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     text-shadow: 1px black;
 }
+.article-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.article-wrapper .carousel-slider {
+    padding-bottom: 2em;
+}
+.article-wrapper .control-prev,.article-wrapper .control-next {
+    height: 600px;
+}
+.article-date {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 1em;
+    font-style: italic;
+    color: lightgray;
+}
+.article-title {
+    text-align: left;
+    font-weight: bold;
+    color: #00a6ce;
+    margin-bottom: 1em;
+}
+.article-text {
+    text-align: left;
+
+}
+.article-btn {
+    text-decoration: none;
+    color: #00a6ce;
+}
+.article-btn:hover {
+    color: #00a6ce;
+    font-weight: bold;
+}
+.between-news svg path {
+    color:white;
+    margin-right: 2em
+}
+.between-news-social svg {
+    margin-right: 1em
+}
+.between-news-social {
+    margin-left: 5em;
+}
+
 
 /* KeyFrames */
 
@@ -816,3 +964,4 @@ select::-ms-expand {
         width: 100%;
     }
 }   
+

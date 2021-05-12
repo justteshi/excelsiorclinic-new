@@ -1,0 +1,51 @@
+/* 320px — 480px: Mobile devices.
+481px — 768px: iPads, Tablets.
+769px — 1024px: Small screens, laptops.
+1025px — 1200px: Desktops, large screens. */
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .nav-bar li {
+        font-size: 10px;
+    }
+    
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-bar li {
+        font-size: 12px;
+    }
+    .choose-us-left {
+        display: none;
+    }
+    .choose-us {
+        justify-content: center;
+        background-position: center;
+    }
+    .choose-us-right{
+        margin: auto;
+    }
+    .choose-us-right:nth-child(2){
+        text-align: center;
+    }
+}
+@media (max-width:995px) {
+    .our-doctors {
+        height: auto;
+    }
+    .doctors-wrapper {
+        display: block;
+        margin: auto;
+
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .nav-bar li {
+        font-size: 12px;
+    }
+}

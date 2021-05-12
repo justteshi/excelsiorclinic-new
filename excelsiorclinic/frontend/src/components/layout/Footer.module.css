@@ -1,0 +1,79 @@
+/* Footer */
+.footer-wrapper {
+    padding-top: 2em;
+    background: #00a6ce;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+}
+.footer h4 {
+    font-weight: bold;
+    color: white;
+    padding: 3em 0 0.5em 0;
+}
+.footer p {
+    color: white;
+
+}
+.clinic-info {
+    width: 40%;
+    display: block;
+    margin: 0 2em 0 0;
+    color: white;
+}
+.dental-clinic {
+    width: 20%;
+    display: block;
+    margin: 0 2em;
+    color: white;
+
+}
+.our-services {
+    width: 20%;
+    display: block;
+    margin: 0 2em;
+    color: white;
+
+}
+.opening-hours {
+    width: 20%;
+    display: block;
+    margin: 0 0 0 2em;
+    color: white;
+
+}
+.monday{
+    display: flex;
+    justify-content: space-between;
+}
+.tuesday {
+    display: flex;
+    justify-content: space-between; 
+}
+.wednesday{
+    display: flex;
+    justify-content: space-between; 
+}
+.thursday{
+    display: flex;
+    justify-content: space-between; 
+}
+.friday{
+    display: flex;
+    justify-content: space-between; 
+}
+.saturday{
+    display: flex;
+    justify-content: space-between; 
+}
+.copyright{
+    margin-bottom: 0;
+    padding-bottom: 1em;
+    color: white;
+
+}
+hr{
+    background: white;
+}

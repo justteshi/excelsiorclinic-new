@@ -7,9 +7,9 @@ const VideoSection = () => {
     const style = {
         height: "1000px",
         background: "",
-        marginTop: "6em",
-        marginBottom: "2em"
-    }
+        marginTop: "4em",
+        marginBottom: "4em"
+    } 
     return (
         <div className="container" style={style}>
             <iframe src='https://www.youtube.com/embed/lR2XfZ755Qs'
@@ -24,7 +24,7 @@ const VideoSection = () => {
                     <FontAwesomeIcon icon={faPlay} size="3x"/>
                 </div>
             </div> */}
-            <div className="choose-us-headng meet-our-doctors">
+            <div className="styled-heading gray-logo video-heading">
                         <h1>Our</h1> 
                         <h1>Clinic</h1>
                 </div>

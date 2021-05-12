@@ -42,9 +42,10 @@ const WriteUsSection = (props) => {
         const {name, email, phone, departament, adress, message} = state
         const writeUs = {name, email, phone, departament, adress, message}
         // console.log(feedback)
-        props.addWriteUs(writeUs)
+        // props.addWriteUs(writeUs)
         clearFields()
     }
+
 
 
     const style = {
@@ -57,7 +58,7 @@ const WriteUsSection = (props) => {
     return (
         <div className="" style={style}>
             <div className="container" style={{background:"", height: "80%", margin: "auto"}}>
-                <div className="choose-us-headng health-service">
+                <div className="-heading health-service">
                             <h1>Write</h1> 
                             <h1>Us</h1>
                     </div>
@@ -160,12 +161,12 @@ const WriteUsSection = (props) => {
 
 
 WriteUsSection.propTypes = {
-    writeUs: PropTypes.array.isRequired,
-    addWriteUs: PropTypes.func.isRequired
+    // writeUs: PropTypes.array.isRequired,
+    // addWriteUs: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-    writeUs: state.writeus.writeUs
+    // writeUs: state.writeus.writeus
 })
 
-export default connect(mapStateToProps, { addWriteUs })(WriteUsSection)
+export default connect(mapStateToProps)(WriteUsSection)

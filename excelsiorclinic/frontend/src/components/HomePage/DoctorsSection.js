@@ -21,14 +21,15 @@ const DoctorsSection = () => {
         })
     }, [])
     const style = {
-        height: "1000px",
         background: "",
-        paddingTop: "4em"
+        paddingTop: "4em",
+        paddingBottom: "2em"
+
     }
     return (
         <div className="container our-doctors" style={style}>
             <div className="doctors-heading">
-                <div className="choose-us-headng meet-our-doctors">
+                <div className="styled-heading meet-our-doctors gray-logo">
                         <h1>Meet</h1> 
                         <h1>Our</h1>
                         <h1>Doctors</h1>

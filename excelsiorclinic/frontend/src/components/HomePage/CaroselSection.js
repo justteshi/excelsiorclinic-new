@@ -34,7 +34,7 @@ const CaroselSection = () => {
                     </Link>
                     
                 </div>
-            </Carousel>
+            </Carousel> 
         </div>
     )
 }

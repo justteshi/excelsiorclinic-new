@@ -24,7 +24,7 @@ const AboutPage = () => {
         width: "100%",
         display: "flex",
         justifyContent: "space-between",
-        marginTop: "8em"
+        marginTop: "6em"
     }
     const progressBarsValues = {
         goodStaff: 80,
@@ -44,10 +44,9 @@ const AboutPage = () => {
                     {/* <img src="../../../static/images/why_choose_us.jpg" /> */}
                 </div>
                 <div className="choose-us-right">
-                    <div className="choose-us-headng">
-                        <h1>Why</h1> 
-                        <h1>Choose</h1>
-                        <h1>Us</h1>
+                    <div className="styled-heading" style={{padding:"2em 0 2em 0"}}>
+                        <h1>The Attention you deserve</h1> 
+                        
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti? Labore repudiandae minima esse officiis.</p>
                     <div className="progress-bars">
@@ -77,24 +76,27 @@ const AboutPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="about-excelsior " style={{height: "900px", background: "#00a6ce", marginTop: "8em", paddingTop: "6em"}}>
+            <div className="about-excelsior " style={{height: "900px", background: "", paddingTop: "6em"}}>
                 <div className="doctors-heading">
-                    <div className="choose-us-headng health-service">
+                    <div className="styled-heading meet-our-doctors gray-logo">
                             <h1>About</h1> 
                             <h1>Excelsior</h1>
                     </div>
                     <p className="about-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quod mollitia suscipit dicta quisquam saepe a excepturi corporis veniam nihil adipisci aut sunt, quas corrupti? Labore repudiandae minima esse officiis.</p>
                 </div>
-                <div className="about-cards">
+                <div className="about-cards container">
                     {firstFour.map(item => (
-                        <div className="about-card">
+                        <div key={item.id} className="about-card">
                             <div className="card-img"></div>
                             <h5 className="card-heading">{item.title}</h5>
                             <p>{item.text}</p>
-                            <Link className="video-btn" to="/">Learn more  &#10140;</Link>
+                            <Link className="video-btn" to="/" style={{left:"0", marginLeft:"0"}}>Learn more  &#10140;</Link>
                         </div>
                     ))}
                 </div>  
+            </div>
+            <div className="reviews" style={{background:"#00a6ce", height:"500px"}}>
+                        
             </div>
             <DoctorsSection />
         </>

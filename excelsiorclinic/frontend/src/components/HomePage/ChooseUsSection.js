@@ -22,7 +22,7 @@ const ChooseUsSection = () => {
                 {/* <img src="../../../static/images/why_choose_us.jpg" /> */}
             </div>
             <div className="choose-us-right">
-                <div className="choose-us-headng">
+                <div className="styled-heading choose-us">
                     <h1>Why</h1> 
                     <h1>Choose</h1>
                     <h1>Us</h1>
