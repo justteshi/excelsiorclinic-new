@@ -55,7 +55,7 @@ Informative web application for Excelsior Clinic where you can book your dental 
  8. Open browser and go to ```http://localhost:8000 ```
  9. Go to http://localhost:8000/admin , login and create 4-8 Services, 1-3 Doctors and some NewsArticles if you want.
 ### Front-end
- 10. navigate to the mai folder
+ 10. navigate to the main folder
  ```bash
  cd ..
  ```
